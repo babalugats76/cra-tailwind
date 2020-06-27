@@ -1,8 +1,13 @@
 module.exports = {
   purge: [],
   theme: {
-    extend: {},
+    extend: {
+      gridTemplateColumns: {
+        // autosize grids
+        "auto-min-w-180": "repeat(auto-fill, minmax(180px, 1fr))",
+      },
+    
+    },
   },
-  variants: {},
   plugins: [],
-}
+};
