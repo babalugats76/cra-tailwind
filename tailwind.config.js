@@ -1,18 +1,24 @@
 module.exports = {
   purge: [],
   theme: {
-    extend: {
+    extend: {      
       gridTemplateColumns: {
         // autosize grids
         "auto-min-w-180": "repeat(auto-fill, minmax(180px, 1fr))",
       },
       inset: {
         // add 50% as an option to positioning classes
-        '1/2': '50%',
+        "1/2": "50%",
+      },
+      spacing: {
+        "7": "1.75rem",
+      },
+      textColor: {
+        'inherit': 'inherit',
       },
       translate: {
-        '-1/2': '-50%'
-      }
+        "-1/2": "-50%",
+      },
     },
   },
   plugins: [],
