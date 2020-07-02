@@ -15,7 +15,9 @@ function App() {
         <div className="p-2 border-2">Item 7</div>
         <div className="p-2 border-2">Item 8</div>
       </div>
+      <button className="btn btn__icon">Button Text</button>
     </div>
+
   );
 }
 

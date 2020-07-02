@@ -1,4 +1,38 @@
 @tailwind base;
 @tailwind components;
+
+$myVar: blue;
+
+:root {
+  --mainColor: $myVar;
+}
+
+.btn {
+  @apply outline-none cursor-pointer;
+  @nest & .classThatMustBeBelow {
+    color: var(--mainColor);
+    @apply outline-none;
+  }
+  &:hover {
+    color: var(--mainColor);
+    @apply outline-none;
+  }
+}
+
+.btn__icon {
+  color: var(--mainColor);
+  @apply outline-none;
+  @nest &.additionalClassThatMustBeHad {
+    &:hover {
+      color: var(--mainColor);
+    }
+  }
+  &:hover {
+    color: purple;
+    @apply outline-none;
+  }
+}
+
 @tailwind utilities;
+
 @import "./styles/custom.scss";
