@@ -7,7 +7,140 @@ $myVar: blue;
   --mainColor: $myVar;
 }
 
+/*** Globals ***/
+
+svg {
+  @apply text-inherit fill-current duration-200 transition-all ease-out;
+}
+
+/*** Buttons ***/
+
 .btn {
+  @apply cursor-pointer outline-none;
+}
+
+.btn:focus {
+  @apply outline-none;
+}
+
+/***
+  .btn--icon {}
+*/
+
+.btn--is-active:hover {
+  @apply text-white;
+}
+
+/* consider using if svg defaults need to change */
+.btn--is-active .btn__icon { 
+  @apply bg-blue-500 border-blue-500 text-current text-white;
+}
+
+.btn--is-active .btn__icon:hover {
+  @apply text-white; /* overrides any other hover rules */
+}
+
+.btn--rounded {
+  @apply rounded;
+}
+
+.btn__icon {
+}
+
+.btn__icon:hover {
+}
+
+/*** Matches ***/
+
+.match-detail {
+  @apply bg-gray-100;
+}
+
+.search-box {
+  @apply relative flex-1 inline-flex;
+}
+
+.search-box__icon {
+  @apply absolute w-6 h-6 top-1/2 transform -translate-y-1/2 ml-1 text-gray-500;
+}
+
+.search-box__input {
+  @apply flex-shrink-0 w-full pt-1 pr-4 pb-1 pl-8 border-l border-t border-b border-gray-400 rounded-l text-xl text-gray-800 leading-tight outline-none;
+}
+
+.matches {
+  @apply relative;
+}
+
+.matches__actions {
+  @apply flex p-4 items-stretch justify-center;
+}
+
+.matches__search-box {
+  max-width: 296px;
+}
+
+.matches__sort-asc,
+.matches__sort-desc {
+  @apply flex-shrink-0 p-1 w-8 border border-gray-400 text-gray-400;
+}
+
+.matches__sort-asc:hover,
+.matches__sort-desc:hover {
+  @apply text-gray-600;
+}
+
+.matches__sort-desc {
+  @apply rounded-r;
+}
+
+.matches__body {
+  @apply relative px-4 pt-4 pb-8;
+}
+
+@screen md {
+  .match-detail {
+    @apply h-full overflow-hidden;
+  }
+
+  .matches {
+    @apply flex flex-col h-full overflow-y-hidden;
+  }
+
+  .matches__header {
+    @apply flex-none;
+  }
+
+  .matches__body {
+    @apply relative flex-1 h-full mt-0 overflow-y-auto;
+  }
+}
+
+.match-card {
+  @apply relative py-2 pl-4 pr-6 border rounded border-gray-400 bg-white shadow-sm transition-all duration-500 delay-100;
+}
+
+.match-card__actions {
+  @apply absolute top-0 right-0 leading-none font-medium;
+}
+
+.match-card__delete {
+  @apply w-7 h-7 p-1 border-none text-gray-400 outline-none;
+}
+
+.match-card__delete:hover {
+  @apply text-pink-300;
+}
+
+.match-card__term {
+  @apply mt-0 mr-6 mb-4 ml-0 font-lexend-deca leading-extra-tight;
+}
+
+.match-card__definition {
+  @apply mb-1 text-md leading-tight font-hind text-gray-600;
+}
+
+/*.btn {
   @apply outline-none cursor-pointer;
   @nest & .classThatMustBeBelow {
     color: var(--mainColor);
@@ -31,7 +164,7 @@ $myVar: blue;
     color: purple;
     @apply outline-none;
   }
-}
+}*/
 
 @tailwind utilities;
 
