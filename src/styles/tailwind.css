@@ -27,13 +27,21 @@ svg {
   .btn--icon {}
 */
 
+.btn--icon:hover {
+  @apply text-gray-600;
+}
+
 .btn--is-active:hover {
   @apply text-white;
 }
 
 /* consider using if svg defaults need to change */
-.btn--is-active .btn__icon { 
-  @apply bg-blue-500 border-blue-500 text-current text-white;
+.btn--icon.btn--is-active { 
+  @apply bg-blue-500 border-blue-500 text-white;
+}
+
+.btn--is-active .btn__icon {
+  @apply text-inherit text-current;
 }
 
 .btn--is-active .btn__icon:hover {
@@ -44,11 +52,13 @@ svg {
   @apply rounded;
 }
 
-.btn__icon {
-}
+/***
+.btn__icon {}
+*/
 
-.btn__icon:hover {
-}
+/***
+.btn__icon:hover {}
+*/
 
 /*** Matches ***/
 
@@ -77,6 +87,7 @@ svg {
 }
 
 .matches__search-box {
+  @apply relative;
   max-width: 296px;
 }
 
@@ -85,10 +96,10 @@ svg {
   @apply flex-shrink-0 p-1 w-8 border border-gray-400 text-gray-400;
 }
 
-.matches__sort-asc:hover,
+/*.matches__sort-asc:hover,
 .matches__sort-desc:hover {
   @apply text-gray-600;
-}
+}*/
 
 .matches__sort-desc {
   @apply rounded-r;
@@ -96,6 +107,10 @@ svg {
 
 .matches__body {
   @apply relative px-4 pt-4 pb-8;
+}
+
+.matches__card-grid {
+  @apply grid gap-3 grid-cols-auto-min-w-180;
 }
 
 @screen md {
