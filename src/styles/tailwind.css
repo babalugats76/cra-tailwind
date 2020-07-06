@@ -9,11 +9,14 @@ $myVar: blue;
 
 /*** Globals ***/
 
-svg {
-  @apply text-inherit fill-current duration-200 transition-all ease-out;
+/*** Buttons ***/
+.icon svg {
+  @apply text-inherit duration-200 transition-all ease-out;
 }
 
-/*** Buttons ***/
+.icon path {
+  @apply fill-current;
+}
 
 .btn {
   @apply cursor-pointer outline-none;
@@ -22,10 +25,6 @@ svg {
 .btn:focus {
   @apply outline-none;
 }
-
-/***
-  .btn--icon {}
-*/
 
 .btn--icon:hover {
   @apply text-gray-600;
@@ -36,7 +35,7 @@ svg {
 }
 
 /* consider using if svg defaults need to change */
-.btn--icon.btn--is-active { 
+.btn--icon.btn--is-active {
   @apply bg-blue-500 border-blue-500 text-white;
 }
 
@@ -52,9 +51,10 @@ svg {
   @apply rounded;
 }
 
-/***
-.btn__icon {}
-*/
+/*.btn__icon svg,
+.btn__icon path {
+  @apply text-inherit fill-current duration-200 transition-all ease-out;
+}*/
 
 /***
 .btn__icon:hover {}
@@ -67,7 +67,7 @@ svg {
 }
 
 .search-box {
-  @apply relative flex-1 inline-flex;
+  @apply relative flex-1 inline-flex w-full;
 }
 
 .search-box__icon {
@@ -75,11 +75,17 @@ svg {
 }
 
 .search-box__input {
-  @apply flex-shrink-0 w-full pt-1 pr-4 pb-1 pl-8 border-l border-t border-b border-gray-400 rounded-l text-xl text-gray-800 leading-tight outline-none;
+  @apply flex-shrink w-full pt-1 pr-4 pb-1 pl-8 border-l border-t border-b border-gray-400 rounded-l text-xl text-gray-800 leading-tight outline-none;
+  min-width: 96px;
+  max-width: 320px;
 }
 
 .matches {
   @apply relative;
+}
+
+.matches__header {
+  @apply text-center;  
 }
 
 .matches__actions {
@@ -87,19 +93,13 @@ svg {
 }
 
 .matches__search-box {
-  @apply relative;
-  max-width: 296px;
+  max-width: 320px;
 }
 
 .matches__sort-asc,
 .matches__sort-desc {
   @apply flex-shrink-0 p-1 w-8 border border-gray-400 text-gray-400;
 }
-
-/*.matches__sort-asc:hover,
-.matches__sort-desc:hover {
-  @apply text-gray-600;
-}*/
 
 .matches__sort-desc {
   @apply rounded-r;
