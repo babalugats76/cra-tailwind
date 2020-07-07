@@ -612,7 +612,7 @@ video {
 
 /*** Globals ***/
 
-/*** Buttons ***/
+/*** Icons ***/
 
 .icon svg {
   color: inherit;
@@ -624,6 +624,8 @@ video {
 .icon path {
   fill: currentColor;
 }
+
+/*** Buttons ***/
 
 .btn {
   cursor: pointer;
@@ -683,6 +685,175 @@ video {
 /***
 .btn__icon:hover {}
 */
+
+/*** Button Groupings ***/
+
+.btn-group {
+  display: inline-flex;
+}
+
+.btn-group--left {
+  margin-right: auto;
+}
+
+.btn-group--right {
+  margin-left: auto;
+}
+
+/* optionally apply to plain old .btn...figure that out as we go */
+
+.btn-group .btn {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 0.25rem;
+  --bg-opacity: 1;
+  background-color: #e2e8f0;
+  background-color: rgba(226, 232, 240, var(--bg-opacity));
+  outline: 0;
+}
+
+.btn-group .btn:not(:first-child) {
+  margin-left: 0.5rem;
+}
+
+/*** Match Edit ***/
+
+/*.match-edit-pane {}*/
+
+.match-edit-pane--bulk {
+  --bg-opacity: 1;
+  background-color: #f7fafc;
+  background-color: rgba(247, 250, 252, var(--bg-opacity));
+}
+
+.match-edit-pane--bulk.popup {
+  transition-property: all;
+  transition-duration: 1000ms;
+  transition-delay: 100ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.match-edit-pane--bulk.popup.maximized {
+  position: fixed;
+  height: auto;
+  width: 60%;
+  max-width: 768px;
+  z-index: 50;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  margin: auto !important;
+  top: 15%;
+  right: 20%;
+  bottom: 20%;
+  left: 20%;
+}
+
+@media (min-width: 768px) {
+  .match-edit-pane--bulk {
+    height: 100%;
+  }
+
+  .match-edit-pane--bulk.popup.maximized .bulk-match__footer {
+    min-height: unset;
+    max-height: 80px;
+  }
+}
+
+/*** Bulk Match ***/
+
+/*.bulk-match {}*/
+
+.bulk-match__header {
+  min-height: 60px;
+  display: flex;
+  padding: 1rem;
+  border-bottom-width: 1px;
+  --border-opacity: 1;
+  border-color: #cbd5e0;
+  border-color: rgba(203, 213, 224, var(--border-opacity));
+}
+
+.bulk-match__header .btn--resize {
+  display: none;
+}
+
+.bulk-match__body {
+  margin-right: 1rem;
+}
+
+.bulk-match__footer {
+  min-height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  border-top-width: 1px;
+  --border-opacity: 1;
+  border-color: #cbd5e0;
+  border-color: rgba(203, 213, 224, var(--border-opacity));
+}
+
+.bulk-match__instructions {
+  line-height: 1.25;
+  margin: auto;
+}
+
+@media (min-width: 768px) {
+  .bulk-match {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: hidden;
+  }
+
+  .bulk-match__header {
+    flex: none;
+  }
+
+  .bulk-match__header .btn--resize {
+    display: block;
+  }
+
+  .bulk-match__body {
+    position: relative;
+    flex: 1 1 0%;
+    height: 100%;
+    margin-top: 0;
+    flex-basis: 60%;
+  }
+
+  .bulk-match__body .CodeMirror {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+  }
+
+  .bulk-match__footer {
+    flex: 1 1 0%;
+    flex-basis: 15%;
+  }
+}
+
+/*** CodeMirror ***/
+
+.CodeMirror {
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  font-size: 1rem;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.CodeMirror .CodeMirror-vscrollbar,
+.CodeMirror .CodeMirror-hscrollbar {
+  outline: 0;
+}
 
 /*** Matches ***/
 

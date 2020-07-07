@@ -9,7 +9,8 @@ $myVar: blue;
 
 /*** Globals ***/
 
-/*** Buttons ***/
+/*** Icons ***/
+
 .icon svg {
   @apply text-inherit duration-200 transition-all ease-out;
 }
@@ -17,6 +18,8 @@ $myVar: blue;
 .icon path {
   @apply fill-current;
 }
+
+/*** Buttons ***/
 
 .btn {
   @apply cursor-pointer outline-none;
@@ -60,6 +63,124 @@ $myVar: blue;
 .btn__icon:hover {}
 */
 
+/*** Button Groupings ***/
+
+.btn-group {
+  @apply inline-flex;
+}
+
+.btn-group--left {
+  @apply mr-auto;
+}
+
+.btn-group--right {
+  @apply ml-auto;
+}
+
+/* optionally apply to plain old .btn...figure that out as we go */
+.btn-group .btn {
+  @apply py-2 px-4 rounded bg-gray-300 outline-none;
+}
+
+.btn-group .btn:not(:first-child) {
+  @apply ml-2;
+}
+
+/*** Match Edit ***/
+
+/*.match-edit-pane {}*/
+
+.match-edit-pane--bulk {
+  @apply bg-gray-100;
+}
+
+.match-edit-pane--bulk.popup {
+  @apply transition-all duration-1000 delay-100 ease-in-out;
+}
+
+.match-edit-pane--bulk.popup.maximized {
+  @apply fixed h-auto w-3/5 max-w-screen-md z-50 shadow-md;
+  @apply m-auto !important;
+  top: 15%;
+  right: 20%;
+  bottom: 20%;
+  left: 20%;
+}
+
+@screen md {
+  .match-edit-pane--bulk {
+    @apply h-full;
+  }
+  .match-edit-pane--bulk.popup.maximized .bulk-match__footer {
+    min-height: unset;
+    max-height: 80px;
+  }
+}
+
+/*** Bulk Match ***/
+
+/*.bulk-match {}*/
+
+.bulk-match__header {
+  min-height: 60px;
+  @apply flex p-4 border-b border-gray-400;
+}
+
+.bulk-match__header .btn--resize {
+  @apply hidden;
+}
+
+.bulk-match__body {
+  @apply mr-4;
+}
+
+.bulk-match__footer {
+  min-height: 120px;
+  @apply flex justify-center items-center py-4 px-8 border-t border-gray-400;
+}
+
+.bulk-match__instructions {
+  @apply leading-tight m-auto;
+}
+
+@screen md {
+  .bulk-match {
+    @apply flex flex-col h-full overflow-y-hidden;
+  }
+
+  .bulk-match__header {
+    @apply flex-none;
+  }
+
+  .bulk-match__header .btn--resize {
+    @apply block;
+  }
+
+  .bulk-match__body {
+    @apply relative flex-1 h-full mt-0;
+    flex-basis: 60%;
+  }
+
+  .bulk-match__body .CodeMirror {
+    @apply absolute top-0 left-0 bottom-0 right-0 h-full;
+  }
+
+  .bulk-match__footer {
+    @apply flex-1;
+    flex-basis: 15%;
+  }
+}
+
+/*** CodeMirror ***/
+.CodeMirror {
+  @apply rounded-tr rounded-br text-base font-sans;
+}
+
+.CodeMirror .CodeMirror-vscrollbar,
+.CodeMirror .CodeMirror-hscrollbar {
+  @apply outline-none;
+}
+
 /*** Matches ***/
 
 .match-detail {
@@ -85,7 +206,7 @@ $myVar: blue;
 }
 
 .matches__header {
-  @apply text-center;  
+  @apply text-center;
 }
 
 .matches__actions {
