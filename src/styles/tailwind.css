@@ -22,11 +22,15 @@ $myVar: blue;
 /*** Buttons ***/
 
 .btn {
-  @apply cursor-pointer outline-none;
+  @apply py-2 px-4 cursor-pointer outline-none;
 }
 
 .btn:focus {
   @apply outline-none;
+}
+
+.btn--icon {
+  @apply box-content w-6 py-1 px-2 border border-gray-400 text-gray-400;
 }
 
 .btn--icon:hover {
@@ -79,7 +83,7 @@ $myVar: blue;
 
 /* optionally apply to plain old .btn...figure that out as we go */
 .btn-group .btn {
-  @apply py-2 px-4 rounded bg-gray-300 outline-none;
+  @apply rounded bg-gray-300 outline-none;
 }
 
 .btn-group .btn:not(:first-child) {
@@ -219,7 +223,7 @@ $myVar: blue;
 
 .matches__sort-asc,
 .matches__sort-desc {
-  @apply flex-shrink-0 p-1 w-8 border border-gray-400 text-gray-400;
+  @apply flex-shrink-0 px-1;
 }
 
 .matches__sort-desc {

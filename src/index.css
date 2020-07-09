@@ -628,12 +628,32 @@ video {
 /*** Buttons ***/
 
 .btn {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   cursor: pointer;
   outline: 0;
 }
 
 .btn:focus {
   outline: 0;
+}
+
+.btn--icon {
+  box-sizing: content-box;
+  width: 1.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-width: 1px;
+  --border-opacity: 1;
+  border-color: #cbd5e0;
+  border-color: rgba(203, 213, 224, var(--border-opacity));
+  --text-opacity: 1;
+  color: #cbd5e0;
+  color: rgba(203, 213, 224, var(--text-opacity));
 }
 
 .btn--icon:hover {
@@ -703,10 +723,6 @@ video {
 /* optionally apply to plain old .btn...figure that out as we go */
 
 .btn-group .btn {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
   border-radius: 0.25rem;
   --bg-opacity: 1;
   background-color: #e2e8f0;
@@ -937,15 +953,8 @@ video {
 .matches__sort-asc,
 .matches__sort-desc {
   flex-shrink: 0;
-  padding: 0.25rem;
-  width: 2rem;
-  border-width: 1px;
-  --border-opacity: 1;
-  border-color: #cbd5e0;
-  border-color: rgba(203, 213, 224, var(--border-opacity));
-  --text-opacity: 1;
-  color: #cbd5e0;
-  color: rgba(203, 213, 224, var(--text-opacity));
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
 }
 
 .matches__sort-desc {
