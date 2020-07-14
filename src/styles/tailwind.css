@@ -11,7 +11,7 @@ $myVar: blue;
 
 /*** Icons ***/
 
-.icon svg {
+svg.icon {
   @apply text-inherit duration-200 transition-all ease-out;
 }
 

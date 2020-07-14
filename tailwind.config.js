@@ -2,6 +2,9 @@ module.exports = {
   purge: [],
   theme: {
     extend: {    
+      borderRadius: {
+        'xl': '1rem',
+      },
       fontFamily : {
         'hind': '"Hind", sans-serif',
         'lexend-deca': '"Lexend Deca", sans-serif',
