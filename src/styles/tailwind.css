@@ -306,6 +306,11 @@ svg.icon {
   }
 }*/
 
+/*** Home ***/
+.bg-gradient--primary {
+  background: linear-gradient(#2bc3eb, #916afb);
+}
+
 @tailwind utilities;
 
 @import "./styles/custom.scss";
