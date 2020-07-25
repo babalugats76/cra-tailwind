@@ -641,10 +641,10 @@ svg.icon {
 }
 
 .btn--icon {
-  box-sizing: content-box;
-  width: 1.5rem;
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
+  width: 1.75rem;
+  height: 1.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   border-width: 1px;
@@ -790,8 +790,15 @@ svg.icon {
   border-color: rgba(203, 213, 224, var(--border-opacity));
 }
 
-.bulk-match__header .btn--resize {
+.bulk-match__actions {
+  display: flex;
+  width: 100%;
+}
+
+.bulk-match__resize {
   display: none;
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 .bulk-match__body {
@@ -830,7 +837,7 @@ svg.icon {
     flex: none;
   }
 
-  .bulk-match__header .btn--resize {
+  .bulk-match__resize {
     display: block;
   }
 
@@ -921,7 +928,7 @@ svg.icon {
   border-color: rgba(203, 213, 224, var(--border-opacity));
   border-top-left-radius: 0.25rem;
   border-bottom-left-radius: 0.25rem;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   --text-opacity: 1;
   color: #2d3748;
   color: rgba(45, 55, 72, var(--text-opacity));
@@ -947,14 +954,18 @@ svg.icon {
 }
 
 .matches__search-box {
+  --text-opacity: 1;
+  color: #cbd5e0;
+  color: rgba(203, 213, 224, var(--text-opacity));
   max-width: 320px;
 }
 
 .matches__sort-asc,
 .matches__sort-desc {
+  width: 2rem;
+  height: 2rem;
   flex-shrink: 0;
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
+  padding: 0.25rem;
 }
 
 .matches__sort-desc {
@@ -1011,17 +1022,44 @@ svg.icon {
   padding-left: 1rem;
   padding-right: 1.5rem;
   border-width: 1px;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
   --border-opacity: 1;
   border-color: #cbd5e0;
   border-color: rgba(203, 213, 224, var(--border-opacity));
   --bg-opacity: 1;
   background-color: #fff;
   background-color: rgba(255, 255, 255, var(--bg-opacity));
+  z-index: 0;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   transition-property: all;
-  transition-duration: 500ms;
-  transition-delay: 100ms;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.match-card:hover {
+  --border-opacity: 1;
+  border-color: #e2e8f0;
+  border-color: rgba(226, 232, 240, var(--border-opacity));
+}
+
+.match-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+  opacity: 0;
+  z-index: -1;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.match-card:hover::after {
+  opacity: 1;
 }
 
 .match-card__actions {
@@ -6612,6 +6650,10 @@ svg.icon {
 
 .font-lexend-deca {
   font-family: "Lexend Deca", sans-serif;
+}
+
+.font-montserrat {
+  font-family: Montserrat, sans-serif;
 }
 
 .font-hairline {
@@ -12636,6 +12678,10 @@ svg.icon {
 
 .z-auto {
   z-index: auto;
+}
+
+.-z-1 {
+  z-index: -1;
 }
 
 .gap-0 {
@@ -20704,6 +20750,10 @@ svg.icon {
     font-family: "Lexend Deca", sans-serif;
   }
 
+  .sm\:font-montserrat {
+    font-family: Montserrat, sans-serif;
+  }
+
   .sm\:font-hairline {
     font-weight: 100;
   }
@@ -26726,6 +26776,10 @@ svg.icon {
 
   .sm\:z-auto {
     z-index: auto;
+  }
+
+  .sm\:-z-1 {
+    z-index: -1;
   }
 
   .sm\:gap-0 {
@@ -34793,6 +34847,10 @@ svg.icon {
     font-family: "Lexend Deca", sans-serif;
   }
 
+  .md\:font-montserrat {
+    font-family: Montserrat, sans-serif;
+  }
+
   .md\:font-hairline {
     font-weight: 100;
   }
@@ -40815,6 +40873,10 @@ svg.icon {
 
   .md\:z-auto {
     z-index: auto;
+  }
+
+  .md\:-z-1 {
+    z-index: -1;
   }
 
   .md\:gap-0 {
@@ -48882,6 +48944,10 @@ svg.icon {
     font-family: "Lexend Deca", sans-serif;
   }
 
+  .lg\:font-montserrat {
+    font-family: Montserrat, sans-serif;
+  }
+
   .lg\:font-hairline {
     font-weight: 100;
   }
@@ -54904,6 +54970,10 @@ svg.icon {
 
   .lg\:z-auto {
     z-index: auto;
+  }
+
+  .lg\:-z-1 {
+    z-index: -1;
   }
 
   .lg\:gap-0 {
@@ -62971,6 +63041,10 @@ svg.icon {
     font-family: "Lexend Deca", sans-serif;
   }
 
+  .xl\:font-montserrat {
+    font-family: Montserrat, sans-serif;
+  }
+
   .xl\:font-hairline {
     font-weight: 100;
   }
@@ -68993,6 +69067,10 @@ svg.icon {
 
   .xl\:z-auto {
     z-index: auto;
+  }
+
+  .xl\:-z-1 {
+    z-index: -1;
   }
 
   .xl\:gap-0 {

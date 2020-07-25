@@ -30,7 +30,7 @@ svg.icon {
 }
 
 .btn--icon {
-  @apply box-content w-6 py-1 px-2 border border-gray-400 text-gray-400;
+  @apply w-7 h-7 py-2 px-2 border border-gray-400 text-gray-400;
 }
 
 .btn--icon:hover {
@@ -130,8 +130,12 @@ svg.icon {
   @apply flex p-4 border-b border-gray-400;
 }
 
-.bulk-match__header .btn--resize {
-  @apply hidden;
+.bulk-match__actions {
+  @apply flex w-full;
+}
+
+.bulk-match__resize {
+  @apply hidden w-10 h-10;
 }
 
 .bulk-match__body {
@@ -156,7 +160,7 @@ svg.icon {
     @apply flex-none;
   }
 
-  .bulk-match__header .btn--resize {
+  .bulk-match__resize {
     @apply block;
   }
 
@@ -200,7 +204,7 @@ svg.icon {
 }
 
 .search-box__input {
-  @apply flex-shrink w-full pt-1 pr-4 pb-1 pl-8 border-l border-t border-b border-gray-400 rounded-l text-xl text-gray-800 leading-tight outline-none;
+  @apply flex-shrink w-full pt-1 pr-4 pb-1 pl-8 border-l border-t border-b border-gray-400 rounded-l text-lg text-gray-800 leading-tight outline-none;
   min-width: 96px;
   max-width: 320px;
 }
@@ -218,12 +222,13 @@ svg.icon {
 }
 
 .matches__search-box {
+  @apply text-gray-400;
   max-width: 320px;
 }
 
 .matches__sort-asc,
 .matches__sort-desc {
-  @apply flex-shrink-0 px-1;
+  @apply w-8 h-8 flex-shrink-0 p-1;
 }
 
 .matches__sort-desc {
@@ -257,7 +262,20 @@ svg.icon {
 }
 
 .match-card {
-  @apply relative py-2 pl-4 pr-6 border rounded border-gray-400 bg-white shadow-sm transition-all duration-500 delay-100;
+  @apply relative py-2 pl-4 pr-6 border rounded-lg border-gray-400 bg-white z-0 shadow-sm transition-all duration-300 ease-in-out;
+}
+
+.match-card:hover {
+  @apply border-gray-300;
+}
+
+.match-card::after {
+  content: '';
+  @apply absolute top-0 left-0 w-full h-full rounded-lg opacity-0 -z-1 shadow-lg transition-all duration-300 ease-in-out;
+}
+
+.match-card:hover::after {
+  @apply opacity-100;
 }
 
 .match-card__actions {

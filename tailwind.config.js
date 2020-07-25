@@ -1,16 +1,17 @@
 module.exports = {
   purge: [],
   theme: {
-    extend: {    
+    extend: {
       borderRadius: {
-        'xl': '1rem',
+        xl: "1rem",
       },
-      fontFamily : {
-        'hind': '"Hind", sans-serif',
-        'lexend-deca': '"Lexend Deca", sans-serif',
-      }, 
+      fontFamily: {
+        hind: '"Hind", sans-serif',
+        "lexend-deca": '"Lexend Deca", sans-serif',
+        montserrat: "Montserrat, sans-serif",
+      },
       fontSize: {
-        'md': '0.9375rem'
+        md: "0.9375rem",
       },
       gridTemplateColumns: {
         // autosize grids
@@ -21,16 +22,19 @@ module.exports = {
         "1/2": "50%",
       },
       lineHeight: {
-        'extra-tight': '1.125',
+        "extra-tight": "1.125",
       },
       spacing: {
         "7": "1.75rem",
       },
       textColor: {
-        'inherit': 'inherit',
+        inherit: "inherit",
       },
       translate: {
         "-1/2": "-50%",
+      },
+      zIndex: {
+        "-1": "-1",
       },
     },
   },
