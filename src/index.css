@@ -748,17 +748,17 @@ svg.icon {
   display: inline-flex;
 }
 
-.btn-group .btn {
-  border-radius: 0.25rem;
+.btn-group__btn {
+  flex: 1 1 0%;
   --bg-opacity: 1;
   background-color: #e2e8f0;
   background-color: rgba(226, 232, 240, var(--bg-opacity));
   outline: 0;
 }
 
-.btn-group .btn:not(:first-child) {
-  margin-left: 0.5rem;
-}
+/*.btn-group .btn:not(:first-child) {
+  @apply ml-2;
+}*/
 
 /*** Match Edit ***/
 
@@ -1063,8 +1063,8 @@ svg.icon {
   border-width: 1px;
   border-radius: 0.5rem;
   --border-opacity: 1;
-  border-color: #cbd5e0;
-  border-color: rgba(203, 213, 224, var(--border-opacity));
+  border-color: #e2e8f0;
+  border-color: rgba(226, 232, 240, var(--border-opacity));
   --bg-opacity: 1;
   background-color: #fff;
   background-color: rgba(255, 255, 255, var(--bg-opacity));
@@ -1077,12 +1077,12 @@ svg.icon {
 
 .match-card:hover {
   --border-opacity: 1;
-  border-color: #e2e8f0;
-  border-color: rgba(226, 232, 240, var(--border-opacity));
+  border-color: #cbd5e0;
+  border-color: rgba(203, 213, 224, var(--border-opacity));
 }
 
 .match-card::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -1143,6 +1143,109 @@ svg.icon {
   --text-opacity: 1;
   color: #718096;
   color: rgba(113, 128, 150, var(--text-opacity));
+}
+
+/*** Dashboard ***/
+
+.dashboard__card-grid {
+  display: grid;
+  grid-gap: 0.75rem;
+  grid-gap: 0.75rem;
+  gap: 0.75rem;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  margin: 1rem;
+}
+
+/*** Game Card ***/
+
+.game-card {
+  position: relative;
+  border-width: 1px;
+  border-radius: 0.5rem;
+  --border-opacity: 1;
+  border-color: #e2e8f0;
+  border-color: rgba(226, 232, 240, var(--border-opacity));
+  --bg-opacity: 1;
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, var(--bg-opacity));
+  z-index: 0;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-y: hidden;
+}
+
+.game-card:hover {
+  --border-opacity: 1;
+  border-color: #cbd5e0;
+  border-color: rgba(203, 213, 224, var(--border-opacity));
+}
+
+.game-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+  opacity: 0;
+  z-index: -1;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.game-card:hover::after {
+  opacity: 1;
+}
+
+.game-card__body {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  min-height: 7rem;
+}
+
+.game-card__badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 9999px;
+  border-width: 1px;
+  margin-right: 0.75rem;
+  margin-top: 0.75rem;
+  --bg-opacity: 1;
+  background-color: #f7fafc;
+  background-color: rgba(247, 250, 252, var(--bg-opacity));
+}
+
+.game-card__title {
+  padding-right: 5rem;
+}
+
+.game-card__details {
+  padding-right: 5rem;
+}
+
+.game-card__footer {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  --bg-opacity: 1;
+  background-color: #f7fafc;
+  background-color: rgba(247, 250, 252, var(--bg-opacity));
+}
+
+.game-card__actions {
+  width: 100%;
 }
 
 /*.btn {
