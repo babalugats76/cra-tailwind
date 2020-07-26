@@ -54,8 +54,28 @@ svg.icon {
   @apply text-white; /* overrides any other hover rules */
 }
 
+.btn--secondary {
+  @apply text-white bg-blue-300 duration-200 transition-all ease-in-out;
+}
+
+.btn--secondary:hover {
+  @apply text-white bg-blue-500 duration-200 transition-all ease-in-out;
+}
+
 .btn--rounded {
   @apply rounded;
+}
+
+.btn--rounded-md {
+  @apply rounded-md;
+}
+
+.btn--rounded-lg {
+  @apply rounded-lg;
+}
+
+.btn--rounded-full {
+  @apply rounded-full;
 }
 
 /*.btn__icon svg,
@@ -67,21 +87,12 @@ svg.icon {
 .btn__icon:hover {}
 */
 
-/*** Button Groupings ***/
+/*** Button Groupings - Use for "multi-buttons" only ***/
 
 .btn-group {
   @apply inline-flex;
 }
 
-.btn-group--left {
-  @apply mr-auto;
-}
-
-.btn-group--right {
-  @apply ml-auto;
-}
-
-/* optionally apply to plain old .btn...figure that out as we go */
 .btn-group .btn {
   @apply rounded bg-gray-300 outline-none;
 }
@@ -132,6 +143,18 @@ svg.icon {
 
 .bulk-match__actions {
   @apply flex w-full;
+}
+
+.bulk-match__actions-pre {
+  @apply mr-auto pl-2;
+}
+
+.bulk-match__actions-pre *:not(:last-child) {
+  @apply mr-1;
+}
+
+.bulk-match__actions-append {
+  @apply ml-auto;
 }
 
 .bulk-match__resize {
@@ -262,7 +285,7 @@ svg.icon {
 }
 
 .match-card {
-  @apply relative py-2 pl-4 pr-6 border rounded-lg border-gray-400 bg-white z-0 shadow-sm transition-all duration-300 ease-in-out;
+  @apply relative py-2 pl-4 pr-6 border rounded-lg border-gray-400 bg-white z-0 shadow-sm transition-all duration-200 ease-in-out;
 }
 
 .match-card:hover {
@@ -271,7 +294,7 @@ svg.icon {
 
 .match-card::after {
   content: '';
-  @apply absolute top-0 left-0 w-full h-full rounded-lg opacity-0 -z-1 shadow-lg transition-all duration-300 ease-in-out;
+  @apply absolute top-0 left-0 w-full h-full rounded-lg opacity-0 -z-1 shadow-lg transition-all duration-200 ease-in-out;
 }
 
 .match-card:hover::after {

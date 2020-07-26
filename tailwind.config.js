@@ -16,6 +16,7 @@ module.exports = {
       gridTemplateColumns: {
         // autosize grids
         "auto-min-w-180": "repeat(auto-fill, minmax(180px, 1fr))",
+        "auto-min-w-320": "repeat(auto-fill, minmax(320px, 1fr))",
       },
       inset: {
         // add 50% as an option to positioning classes
