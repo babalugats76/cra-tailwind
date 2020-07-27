@@ -606,6 +606,8 @@ video {
   }
 }
 
+/*** Application Colors ***/
+
 :root {
   --mainColor: blue;
 }
@@ -755,10 +757,6 @@ svg.icon {
   background-color: rgba(226, 232, 240, var(--bg-opacity));
   outline: 0;
 }
-
-/*.btn-group .btn:not(:first-child) {
-  @apply ml-2;
-}*/
 
 /*** Match Edit ***/
 
@@ -1203,12 +1201,47 @@ svg.icon {
   opacity: 1;
 }
 
+.game-card__body:hover .game-card__delete {
+  fill: currentColor;
+  --text-opacity: 1;
+  color: #f687b3;
+  color: rgba(246, 135, 179, var(--text-opacity));
+  --bg-opacity: 1;
+  background-color: #fff5f7;
+  background-color: rgba(255, 245, 247, var(--bg-opacity));
+  opacity: 0.75;
+  transition-property: all;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 10;
+}
+
+.game-card--can-delete .game-card__body:hover .game-card__delete {
+  --bg-opacity: 1;
+  background-color: #fed7e2;
+  background-color: rgba(254, 215, 226, var(--bg-opacity));
+  opacity: 0.5;
+}
+
 .game-card__body {
+  position: relative;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
   min-height: 7rem;
+}
+
+.game-card__delete {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition-property: all;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
 }
 
 .game-card__badge {

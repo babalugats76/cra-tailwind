@@ -1,6 +1,8 @@
 @tailwind base;
 @tailwind components;
 
+/*** Application Colors ***/
+
 $myVar: blue;
 
 :root {
@@ -96,10 +98,6 @@ svg.icon {
 .btn-group__btn {
   @apply flex-1 bg-gray-300 outline-none;
 }
-
-/*.btn-group .btn:not(:first-child) {
-  @apply ml-2;
-}*/
 
 /*** Match Edit ***/
 
@@ -346,9 +344,21 @@ svg.icon {
   @apply opacity-100;
 }
 
+.game-card__body:hover .game-card__delete {
+  @apply fill-current text-pink-400 bg-pink-100 opacity-75 transition-all duration-200 ease-in-out z-10;
+}
+
+.game-card--can-delete .game-card__body:hover .game-card__delete {
+  @apply bg-pink-200 opacity-50;
+}
+
 .game-card__body {
-  @apply px-6 py-4;
+  @apply relative px-6 py-4;
   min-height: 7rem;
+}
+
+.game-card__delete {
+  @apply absolute top-0 left-0 w-full h-full transition-all duration-200 ease-in-out -z-1;
 }
 
 .game-card__badge {
