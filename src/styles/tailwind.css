@@ -99,6 +99,18 @@ svg.icon {
   @apply flex-1 bg-gray-300 outline-none;
 }
 
+.btn-group :not(:last-of-type) {
+  @apply border-r border-gray-400;
+}
+
+.btn-group--rounded .btn-group__btn:first-of-type {
+  @apply rounded-l-lg;
+}
+
+.btn-group--rounded .btn-group__btn:last-of-type {
+  @apply rounded-r-lg;
+}
+
 /*** Match Edit ***/
 
 /*.match-edit-pane {}*/
