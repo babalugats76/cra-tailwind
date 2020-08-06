@@ -303,7 +303,7 @@ svg.icon {
 }
 
 .match-card::after {
-  content: "";
+  content: '';
   @apply absolute top-0 left-0 w-full h-full rounded-lg opacity-0 -z-1 shadow-lg transition-all duration-200 ease-in-out;
 }
 
@@ -348,7 +348,7 @@ svg.icon {
 }
 
 .game-card::after {
-  content: "";
+  content: '';
   @apply absolute top-0 left-0 w-full h-full rounded-lg opacity-0 -z-1 shadow-lg transition-all duration-300 ease-in-out overflow-hidden;
 }
 
@@ -357,11 +357,11 @@ svg.icon {
 }
 
 .game-card__body:hover .game-card__delete {
-  @apply fill-current text-pink-400 bg-pink-100 opacity-75 transition-all duration-200 ease-in-out z-10;
+  @apply fill-current flex items-center justify-center text-pink-400 bg-pink-100 opacity-75 transition-all duration-200 ease-in-out z-10;
 }
 
 .game-card--can-delete .game-card__body:hover .game-card__delete {
-  @apply bg-pink-200 opacity-50;
+  @apply text-pink-700 bg-pink-200 opacity-50;
 }
 
 .game-card__body {
@@ -370,7 +370,11 @@ svg.icon {
 }
 
 .game-card__delete {
-  @apply absolute top-0 left-0 w-full h-full transition-all duration-200 ease-in-out -z-1;
+  @apply absolute hidden top-0 left-0 w-full h-full transition-all duration-200 ease-in-out -z-1;
+}
+
+.game-card__delete-icon {
+  @apply w-8 h-8 fill-current;
 }
 
 .game-card__badge {
@@ -386,7 +390,7 @@ svg.icon {
 }
 
 .game-card__footer {
-  @apply px-6 py-4 bg-gray-100;
+  @apply px-6 py-4 bg-gray-100 overflow-hidden;
 }
 
 .game-card__actions {
@@ -426,4 +430,4 @@ svg.icon {
 
 @tailwind utilities;
 
-@import "./styles/custom.scss";
+@import './styles/custom.scss';

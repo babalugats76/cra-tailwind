@@ -758,6 +758,23 @@ svg.icon {
   outline: 0;
 }
 
+.btn-group :not(:last-of-type) {
+  border-right-width: 1px;
+  --border-opacity: 1;
+  border-color: #cbd5e0;
+  border-color: rgba(203, 213, 224, var(--border-opacity));
+}
+
+.btn-group--rounded .btn-group__btn:first-of-type {
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+
+.btn-group--rounded .btn-group__btn:last-of-type {
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
 /*** Match Edit ***/
 
 /*.match-edit-pane {}*/
@@ -1080,7 +1097,7 @@ svg.icon {
 }
 
 .match-card::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -1181,7 +1198,7 @@ svg.icon {
 }
 
 .game-card::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -1203,6 +1220,9 @@ svg.icon {
 
 .game-card__body:hover .game-card__delete {
   fill: currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   --text-opacity: 1;
   color: #f687b3;
   color: rgba(246, 135, 179, var(--text-opacity));
@@ -1217,6 +1237,9 @@ svg.icon {
 }
 
 .game-card--can-delete .game-card__body:hover .game-card__delete {
+  --text-opacity: 1;
+  color: #b83280;
+  color: rgba(184, 50, 128, var(--text-opacity));
   --bg-opacity: 1;
   background-color: #fed7e2;
   background-color: rgba(254, 215, 226, var(--bg-opacity));
@@ -1234,6 +1257,7 @@ svg.icon {
 
 .game-card__delete {
   position: absolute;
+  display: none;
   top: 0;
   left: 0;
   width: 100%;
@@ -1242,6 +1266,12 @@ svg.icon {
   transition-duration: 200ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   z-index: -1;
+}
+
+.game-card__delete-icon {
+  width: 2rem;
+  height: 2rem;
+  fill: currentColor;
 }
 
 .game-card__badge {
@@ -1275,6 +1305,7 @@ svg.icon {
   --bg-opacity: 1;
   background-color: #f7fafc;
   background-color: rgba(247, 250, 252, var(--bg-opacity));
+  overflow: hidden;
 }
 
 .game-card__actions {
@@ -15412,7 +15443,7 @@ svg.icon {
   transition-delay: 1000ms;
 }
 
-@import "./styles/custom.scss";
+@import './styles/custom.scss';
 
 @media (min-width: 640px) {
   .sm\:space-y-0 > :not(template) ~ :not(template) {
