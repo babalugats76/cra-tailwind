@@ -634,8 +634,17 @@ svg.icon {
   padding-bottom: 0.5rem;
   padding-left: 1rem;
   padding-right: 1rem;
+  --bg-opacity: 1;
+  background-color: #e2e8f0;
+  background-color: rgba(226, 232, 240, var(--bg-opacity));
   cursor: pointer;
   outline: 0;
+}
+
+.btn:hover {
+  --bg-opacity: 1;
+  background-color: #cbd5e0;
+  background-color: rgba(203, 213, 224, var(--bg-opacity));
 }
 
 .btn:focus {
@@ -643,16 +652,12 @@ svg.icon {
 }
 
 .btn--icon {
-  width: 1.75rem;
+  width: auto;
   height: 1.75rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-  border-width: 1px;
-  --border-opacity: 1;
-  border-color: #cbd5e0;
-  border-color: rgba(203, 213, 224, var(--border-opacity));
   --text-opacity: 1;
   color: #cbd5e0;
   color: rgba(203, 213, 224, var(--text-opacity));
@@ -662,6 +667,10 @@ svg.icon {
   --text-opacity: 1;
   color: #718096;
   color: rgba(113, 128, 150, var(--text-opacity));
+}
+
+.btn--icon-lg {
+  height: 2.5rem;
 }
 
 .btn--is-active:hover {
@@ -756,6 +765,12 @@ svg.icon {
   background-color: #e2e8f0;
   background-color: rgba(226, 232, 240, var(--bg-opacity));
   outline: 0;
+}
+
+.btn-group__btn:hover {
+  --bg-opacity: 1;
+  background-color: #cbd5e0;
+  background-color: rgba(203, 213, 224, var(--bg-opacity));
 }
 
 .btn-group :not(:last-of-type) {
