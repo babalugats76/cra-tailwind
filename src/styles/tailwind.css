@@ -36,11 +36,11 @@ svg.icon {
 }
 
 .btn--icon {
-  @apply w-auto h-7 py-2 px-2 text-gray-400;
+  @apply w-auto h-7 py-2 px-2 text-gray-600;
 }
 
 .btn--icon:hover {
-  @apply text-gray-600;
+  @apply text-gray-900;
 }
 
 .btn--icon-lg {
@@ -75,27 +75,6 @@ svg.icon {
 .btn--rounded {
   @apply rounded;
 }
-
-.btn--rounded-md {
-  @apply rounded-md;
-}
-
-.btn--rounded-lg {
-  @apply rounded-lg;
-}
-
-.btn--rounded-full {
-  @apply rounded-full;
-}
-
-/*.btn__icon svg,
-.btn__icon path {
-  @apply text-inherit fill-current duration-200 transition-all ease-out;
-}*/
-
-/***
-.btn__icon:hover {}
-*/
 
 /*** Button Groupings - Use for "multi-buttons" only ***/
 
