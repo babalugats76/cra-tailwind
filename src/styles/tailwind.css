@@ -18,7 +18,7 @@ svg.icon {
 }
 
 .icon path {
-  @apply fill-current;
+  @apply fill-current text-current;
 }
 
 /*** Buttons ***/
@@ -331,16 +331,16 @@ svg.icon {
 /*** Game Card ***/
 
 .game-card {
-  @apply relative border rounded-lg border-gray-300 bg-white z-0 shadow-sm transition-all duration-300 ease-in-out overflow-y-hidden;
+  @apply relative border rounded-xl border-gray-300 bg-white z-0 shadow-none transition-all duration-300 ease-in-out;
 }
 
 .game-card:hover {
-  @apply border-gray-400;
+  @apply border-gray-200;
 }
 
 .game-card::after {
   content: '';
-  @apply absolute top-0 left-0 w-full h-full rounded-lg opacity-0 -z-1 shadow-lg transition-all duration-300 ease-in-out overflow-hidden;
+  @apply absolute top-0 left-0 w-full h-full rounded-xl opacity-0 -z-1 shadow-md transition-all duration-300 ease-in-out overflow-hidden;
 }
 
 .game-card:hover::after {
@@ -381,7 +381,7 @@ svg.icon {
 }
 
 .game-card__footer {
-  @apply px-6 py-4 bg-gray-100 overflow-hidden;
+  @apply px-6 py-4 rounded-b-xl bg-gray-100 overflow-hidden;
 }
 
 .game-card__actions {

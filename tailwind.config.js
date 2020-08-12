@@ -3,39 +3,39 @@ module.exports = {
   theme: {
     extend: {
       borderRadius: {
-        xl: "1rem",
+        xl: '0.75rem',
       },
       fontFamily: {
         hind: '"Hind", sans-serif',
-        "lexend-deca": '"Lexend Deca", sans-serif',
-        montserrat: "Montserrat, sans-serif",
+        'lexend-deca': '"Lexend Deca", sans-serif',
+        montserrat: 'Montserrat, sans-serif',
       },
       fontSize: {
-        md: "0.9375rem",
+        md: '0.9375rem',
       },
       gridTemplateColumns: {
         // autosize grids
-        "auto-min-w-180": "repeat(auto-fill, minmax(180px, 1fr))",
-        "auto-min-w-320": "repeat(auto-fill, minmax(320px, 1fr))",
+        'auto-min-w-180': 'repeat(auto-fill, minmax(180px, 1fr))',
+        'auto-min-w-320': 'repeat(auto-fill, minmax(320px, 1fr))',
       },
       inset: {
         // add 50% as an option to positioning classes
-        "1/2": "50%",
+        '1/2': '50%',
       },
       lineHeight: {
-        "extra-tight": "1.125",
+        'extra-tight': '1.125',
       },
       spacing: {
-        "7": "1.75rem",
+        '7': '1.75rem',
       },
       textColor: {
-        inherit: "inherit",
+        inherit: 'inherit',
       },
       translate: {
-        "-1/2": "-50%",
+        '-1/2': '-50%',
       },
       zIndex: {
-        "-1": "-1",
+        '-1': '-1',
       },
     },
   },
