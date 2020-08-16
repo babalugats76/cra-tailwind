@@ -12,6 +12,7 @@ module.exports = {
       },
       fontSize: {
         md: '0.9375rem',
+        'base-em': '1em'
       },
       gridTemplateColumns: {
         // autosize grids
@@ -25,7 +26,41 @@ module.exports = {
       lineHeight: {
         'extra-tight': '1.125',
       },
+      padding: {
+        '0-em': '0',
+        'xs-em': '.125em',
+        '1-em': '.25em',
+        '2-em': '.5em',
+        '3-em': '.75em',
+        '4-em': '1em',
+        '5-em': '1.25em',
+        '6-em': '1.5em',
+        '7-em': '1.75em',
+        '8-em': '2em',
+        '10-em': '2.5em',
+        '12-em': '3em',
+        '16-em': '4em',
+        '20-em': '5em',
+      },
+      margin: {
+        '0-em': '0',
+        'xs-em': '.125em',
+        '1-em': '.25em',
+        '2-em': '.5em',
+        '3-em': '.75em',
+        '4-em': '1em',
+        '5-em': '1.25em',
+        '6-em': '1.5em',
+        '7-em': '1.75em',
+        '8-em': '2em',
+        '10-em': '2.5em',
+        '12-em': '3em',
+        '16-em': '4em',
+        '20-em': '5em',
+      },
       spacing: {
+        'xs': '.125rem',
+        '5-em': '1.25em',
         '7': '1.75rem',
       },
       textColor: {
