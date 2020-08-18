@@ -13,13 +13,13 @@ $myVar: blue;
 
 /*** Icons ***/
 
-svg.icon {
-  @apply text-inherit duration-200 transition-all ease-out;
+.icon {
+  @apply inline-block w-4-em h-4-em stroke-0 stroke-current fill-current text-current duration-200 transition-all ease-out;
 }
 
-.icon path {
+/*.icon path {
   @apply fill-current text-current;
-}
+}*/
 
 /*** Buttons ***/
 
@@ -102,6 +102,80 @@ svg.icon {
   @apply rounded-r-lg;
 }
 
+/*** Pills ***/
+
+.pill {
+  @apply inline-flex p-1 my-1 rounded-full text-base leading-snug select-none;
+}
+
+.pill--blue {
+  @apply bg-blue-500 text-white;
+}
+
+.pill--xs {
+  @apply text-xs;
+}
+
+.pill--sm {
+  @apply text-sm;
+}
+
+.pill--md {
+  @apply text-md;
+}
+
+.pill--lg {
+  @apply text-lg;
+}
+
+.pill__inner {
+  @apply inline-flex items-center;
+}
+
+.pill__inner > * {
+  @apply inline-block leading-none;
+}
+
+.pill__inner > *:last-child {
+  @apply pr-2-em;
+}
+
+.pill__pre {
+  @apply inline-block p-1-em my-xs-em ml-xs-em rounded-full text-base-em;
+}
+
+.pill__pre.pill__badge ~ .pill__body {
+  @apply ml-1-em;
+}
+
+.pill__body ~ .pill__append {
+  @apply ml-1-em;
+}
+
+.pill__body {
+  @apply pr-1-em;
+}
+
+.pill__text {
+  @apply text-base-em;
+}
+
+.pill__badge {
+  @apply rounded-full;
+}
+
+.pill__inner .icon {
+  @apply w-5-em h-5-em;
+}
+
+.pill__badge--white {
+  @apply bg-white text-gray-700;
+}
+
+.pill-row .pill:not(:last-child) {
+  @apply mr-2;
+}
+
 /*** Match Edit ***/
 
 /*.match-edit-pane {}*/
@@ -134,8 +208,6 @@ svg.icon {
 }
 
 /*** Bulk Match ***/
-
-/*.bulk-match {}*/
 
 .bulk-match__header {
   min-height: 60px;
