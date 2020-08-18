@@ -658,12 +658,6 @@ video {
 }
 
 .btn--icon {
-  width: auto;
-  height: 1.75rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
   --text-opacity: 1;
   color: #718096;
   color: rgba(113, 128, 150, var(--text-opacity));
@@ -673,10 +667,6 @@ video {
   --text-opacity: 1;
   color: #1a202c;
   color: rgba(26, 32, 44, var(--text-opacity));
-}
-
-.btn--icon-lg {
-  height: 2.5rem;
 }
 
 .btn--is-active:hover {
@@ -742,14 +732,42 @@ video {
 
 .btn-group {
   display: inline-flex;
+  font-size: 1rem;
+}
+
+.btn-group--xs {
+  font-size: 0.75rem;
+}
+
+.btn-group--sm {
+  font-size: 0.875rem;
+}
+
+.btn-group--md {
+  font-size: 0.9375rem;
+}
+
+.btn-group--lg {
+  font-size: 1.125rem;
 }
 
 .btn-group__btn {
   flex: 1 1 0%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .5em;
+  margin: 0;
+  font-size: 1em;
   --bg-opacity: 1;
   background-color: #e2e8f0;
   background-color: rgba(226, 232, 240, var(--bg-opacity));
   outline: 0;
+}
+
+.btn-group__btn .icon {
+  width: 1.25em;
+  height: 1.25em;
 }
 
 .btn-group__btn:hover {

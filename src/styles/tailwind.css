@@ -36,15 +36,11 @@ $myVar: blue;
 }
 
 .btn--icon {
-  @apply w-auto h-7 py-2 px-2 text-gray-600;
+  @apply text-gray-600;
 }
 
 .btn--icon:hover {
   @apply text-gray-900;
-}
-
-.btn--icon-lg {
-  @apply h-10;
 }
 
 .btn--is-active:hover {
@@ -79,11 +75,31 @@ $myVar: blue;
 /*** Button Groupings - Use for "multi-buttons" only ***/
 
 .btn-group {
-  @apply inline-flex;
+  @apply inline-flex text-base;
+}
+
+.btn-group--xs {
+  @apply text-xs;
+}
+
+.btn-group--sm {
+  @apply text-sm;
+}
+
+.btn-group--md {
+  @apply text-md;
+}
+
+.btn-group--lg {
+  @apply text-lg;
 }
 
 .btn-group__btn {
-  @apply flex-1 bg-gray-300 outline-none;
+  @apply flex-1 inline-flex items-center justify-center p-2-em m-0 text-base-em bg-gray-300 outline-none;
+}
+
+.btn-group__btn .icon {
+  @apply w-5-em h-5-em;
 }
 
 .btn-group__btn:hover {
