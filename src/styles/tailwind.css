@@ -121,7 +121,7 @@ $myVar: blue;
 /*** Pills ***/
 
 .pill {
-  @apply inline-flex p-1 my-1 rounded-full text-base leading-snug select-none;
+  @apply inline-flex my-1 rounded-full text-base leading-snug select-none;
 }
 
 .pill--blue {
@@ -136,60 +136,60 @@ $myVar: blue;
   @apply text-sm;
 }
 
-.pill--md {
-  @apply text-md;
-}
-
 .pill--lg {
   @apply text-lg;
 }
 
 .pill__inner {
-  @apply inline-flex items-center;
+  @apply inline-flex items-center p-1;
 }
 
 .pill__inner > * {
-  @apply inline-block leading-none;
+  @apply inline-block ml-1 leading-none;
 }
 
 .pill__inner > *:last-child {
-  @apply pr-2-em;
+  @apply mr-1;
 }
 
-.pill__pre {
-  @apply inline-block p-1-em my-xs-em ml-xs-em rounded-full text-base-em;
+.pill__pre:not(.pill__badge) {
+  @apply ml-xs;
 }
 
-.pill__pre.pill__badge ~ .pill__body {
-  @apply ml-1-em;
-}
-
-.pill__body ~ .pill__append {
-  @apply ml-1-em;
-}
-
-.pill__body {
-  @apply pr-1-em;
-}
-
-.pill__text {
-  @apply text-base-em;
+.pill__pre.pill__badge {
+  @apply ml-0;
 }
 
 .pill__badge {
   @apply rounded-full;
 }
 
-.pill__inner .icon {
-  @apply w-5-em h-5-em;
-}
-
 .pill__badge--white {
   @apply bg-white text-gray-700;
 }
 
+.pill__icon {
+  @apply w-4-em h-4-em;
+}
+
+.pill__icon .icon {
+  @apply block leading-none;
+}
+
+.pill__badge .icon {
+  @apply p-xs-em;
+}
+
+.pill__text {
+  @apply text-base-em leading-none;
+}
+
+.pill__row {
+  @apply flex flex-row flex-wrap; 
+}
+
 .pill-row .pill:not(:last-child) {
-  @apply mr-px;
+  @apply mr-1;
 }
 
 /*** Match Edit ***/
