@@ -79,15 +79,15 @@ $myVar: blue;
 }
 
 .btn-group--xs {
-  @apply text-xs;
+  font-size: 0.625rem;
 }
 
 .btn-group--sm {
-  @apply text-sm;
+  font-size: 0.75rem;
 }
 
 .btn-group--md {
-  @apply text-md;
+  font-size: 0.875rem;
 }
 
 .btn-group--lg {
@@ -189,7 +189,7 @@ $myVar: blue;
 }
 
 .pill-row .pill:not(:last-child) {
-  @apply mr-2;
+  @apply mr-px;
 }
 
 /*** Match Edit ***/

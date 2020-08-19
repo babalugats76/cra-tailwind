@@ -736,15 +736,15 @@ video {
 }
 
 .btn-group--xs {
-  font-size: 0.75rem;
+  font-size: 0.625rem;
 }
 
 .btn-group--sm {
-  font-size: 0.875rem;
+  font-size: 0.75rem;
 }
 
 .btn-group--md {
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
 }
 
 .btn-group--lg {
@@ -891,7 +891,7 @@ video {
 }
 
 .pill-row .pill:not(:last-child) {
-  margin-right: 0.5rem;
+  margin-right: 1px;
 }
 
 /*** Match Edit ***/
