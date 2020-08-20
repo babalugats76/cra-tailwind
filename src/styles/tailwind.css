@@ -22,6 +22,9 @@ $lightGray: #e2e8f0;
 }
 
 /*** Globals ***/
+html {
+  @apply font-lexend-deca;
+}
 
 /*** Icons ***/
 

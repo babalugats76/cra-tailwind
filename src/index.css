@@ -621,6 +621,10 @@ video {
 
 /*** Globals ***/
 
+html {
+  font-family: "Lexend Deca", sans-serif;
+}
+
 /*** Icons ***/
 
 .icon {
