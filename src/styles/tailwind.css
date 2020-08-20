@@ -3,10 +3,22 @@
 
 /*** Application Colors ***/
 
-$myVar: blue;
+$zaffre: #001399;
+$blue: #014ce4;
+$electricPurple: #aa54ff;
+$fluorescentBlue: #01e7e4;
+$gray: #718096;
+$lightGray: #e2e8f0;
 
 :root {
-  --mainColor: $myVar;
+  --color-blue: $blue;
+  --color-indigo: $zaffre;
+  --color-purple: $electricPurple;
+  --color-teal: $fluorescentBlue;
+  --color-primary: $zaffre;
+  --color-secondary: $electricPurple;
+  --color-neutral: $gray;
+  --color-neutral-light: $lightGray;
 }
 
 /*** Globals ***/
@@ -128,6 +140,26 @@ $myVar: blue;
   @apply bg-blue-500 text-white;
 }
 
+.pill--primary {
+  @apply bg-primary text-white;
+}
+
+.pill--secondary {
+  @apply bg-secondary text-white;
+}
+
+.pill--neutral {
+  @apply bg-neutral-light text-neutral;
+}
+
+.pill--teal {
+  @apply bg-theme-teal text-gray-700;
+}
+
+.pill--purple {
+  @apply bg-theme-purple text-white;
+}
+
 .pill--xs {
   @apply text-xs;
 }
@@ -185,10 +217,10 @@ $myVar: blue;
 }
 
 .pill__row {
-  @apply flex flex-row flex-wrap; 
+  @apply flex flex-row flex-wrap;
 }
 
-.pill-row .pill:not(:last-child) {
+.pill-row--spaced .pill:not(:last-child) {
   @apply mr-1;
 }
 

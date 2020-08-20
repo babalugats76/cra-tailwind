@@ -5,6 +5,18 @@ module.exports = {
       borderRadius: {
         xl: '0.75rem',
       },
+      colors: {
+        primary: 'var(--color-primary)',
+        secondary: 'var(--color-secondary)',
+        neutral: {
+          light: 'var(--color-neutral-light)',
+          default: 'var(--color-neutral)',
+        },
+        'theme-indigo': 'var(--color-indigo)',
+        'theme-blue': 'var(--color-blue)',
+        'theme-teal': 'var(--color-teal)',
+        'theme-purple': 'var(--color-purple)',
+      },
       fontFamily: {
         hind: '"Hind", sans-serif',
         'lexend-deca': '"Lexend Deca", sans-serif',
@@ -12,7 +24,7 @@ module.exports = {
       },
       fontSize: {
         md: '0.9375rem',
-        'base-em': '1em'
+        'base-em': '1em',
       },
       gridTemplateColumns: {
         // autosize grids
@@ -41,8 +53,8 @@ module.exports = {
         '12-em': '3em',
         '16-em': '4em',
         '20-em': '5em',
-        'xs': '0.125rem',
-        'sm': '0.375rem',
+        xs: '0.125rem',
+        sm: '0.375rem',
         '7': '1.75rem',
       },
       textColor: {
