@@ -219,7 +219,7 @@ html {
   @apply text-base-em leading-none;
 }
 
-.pill__row {
+.pill-row {
   @apply flex flex-row flex-wrap;
 }
 
