@@ -609,6 +609,18 @@ video {
 /*** Application Colors ***/
 
 :root {
+  --badge-size-xs: 0.9375rem;
+  --badge-size-sm: 1rem;
+  --badge-size-md: 1.125rem;
+  --badge-size-base: 1.25rem;
+  --badge-size-lg: 1.5rem;
+  --badge-size-xl: 1.75rem;
+  --badge-size-2xl: 2rem;
+  --chip-size-xs: 0.9375rem;
+  --chip-size-sm: 1rem;
+  --chip-size-md: 1.125rem;
+  --chip-size-base: 1.25rem;
+  --chip-size-lg: 1.5rem;
   --color-blue: #014ce4;
   --color-indigo: #001399;
   --color-purple: #aa54ff;
@@ -640,9 +652,69 @@ html {
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
 
-/*.icon path {
-  @apply fill-current text-current;
-}*/
+.icon--full {
+  width: 100%;
+  height: 100%;
+}
+
+/*** Badges ***/
+
+.badge {
+  --badge-padding: 0.1875em;
+  display: inline-block;
+  border-radius: 9999px;
+  width: 1em;
+  height: 1em;
+  text-align: center;
+  font-size: var(--badge-size-base);
+  padding: var(--badge-padding);
+}
+
+.badge--full {
+  --badge-padding-full: 0.1875em;
+  width: 100%;
+  height: 100%;
+  padding: var(--badge-padding-full);
+}
+
+.badge--xs {
+  font-size: var(--badge-size-xs);
+}
+
+.badge--sm {
+  font-size: var(--badge-size-sm);
+}
+
+.badge--md {
+  font-size: var(--badge-size-md);
+}
+
+.badge--lg {
+  font-size: var(--badge-size-lg);
+}
+
+.badge--xl {
+  font-size: var(--badge-size-xl);
+}
+
+.badge--2xl {
+  font-size: var(--badge-size-2xl);
+}
+
+.badge--white {
+  --bg-opacity: 1;
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, var(--bg-opacity));
+  --text-opacity: 1;
+  color: #4a5568;
+  color: rgba(74, 85, 104, var(--text-opacity));
+}
+
+.badge__icon {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
 
 /*** Buttons ***/
 
