@@ -14,15 +14,15 @@ $lightGray: #e2e8f0;
   --badge-size-xs: 0.9375rem;
   --badge-size-sm: 1rem;
   --badge-size-md: 1.125rem;
-  --badge-size-base: 1.25rem;
   --badge-size-lg: 1.5rem;
+  --badge-size-default: var(--badge-size-md);
   --badge-size-xl: 1.75rem;
   --badge-size-2xl: 2rem;
-  --chip-size-xs: 0.9375rem;
-  --chip-size-sm: 1rem;
-  --chip-size-md: 1.125rem;
-  --chip-size-base: 1.25rem;
-  --chip-size-lg: 1.5rem;
+  --chip-size-xs: 0.625rem;
+  --chip-size-sm: 0.75rem;
+  --chip-size-md: 0.875rem;
+  --chip-size-lg: 1rem;
+  --chip-size-default: var(--chip-size-md);
   --color-blue: $blue;
   --color-indigo: $zaffre;
   --color-purple: $electricPurple;
@@ -48,19 +48,22 @@ html {
   @apply w-full h-full;
 }
 
-/*** Badges ***/
+/*** Badge ***/
 .badge {
+  --badge-width: 1.375em;
+  --badge-height: 1.375em;
   --badge-padding: 0.1875em;
-  @apply inline-block rounded-full w-4-em h-4-em text-center;
+  --badge-full-padding: 16.666667%;
   font-size: var(--badge-size-base);
+  @apply inline-block rounded-full text-center text-current;
+  width: var(--badge-width);
+  height: var(--badge-height);
   padding: var(--badge-padding);
 }
 
 .badge--full {
-  --badge-padding-full: 0.1875em;
   @apply w-full h-full;
-  padding: var(--badge-padding-full);
-
+  padding: var(--badge-full-padding);
 }
 
 .badge--xs {
@@ -88,13 +91,12 @@ html {
 }
 
 .badge--white {
-  @apply bg-white text-gray-700;
+  @apply bg-white;
+  color: var(--color-neutral);
 }
 
 .badge__icon {
-  display: block;
-  width: 100%;
-  height: 100%;
+  @apply block w-full h-full align-top;
 }
 
 /*** Buttons ***/
@@ -194,99 +196,121 @@ html {
   @apply rounded-r-lg;
 }
 
-/*** Pills ***/
+/*** Chips ***/
 
-.pill {
-  @apply inline-flex my-1 rounded-full text-base leading-snug select-none;
+.chip {
+  --chip-text-spacing-x: 0.5rem;
+  --chip-badge-spacing-x: 0.25rem;
+  --chip-icon-spacing-x: 0.25rem;
+  --chip-max-width: 160px;
+  font-size: var(--chip-size-default);
+  @apply inline-block h-8-em rounded-sm overflow-hidden select-none;
 }
 
-.pill--blue {
+.chip--xs {
+  font-size: var(--chip-size-xs);
+}
+
+.chip--sm {
+  font-size: var(--chip-size-sm);
+}
+
+.chip--md {
+  font-size: var(--chip-size-md);
+}
+
+.chip--lg {
+  font-size: var(--chip-size-lg);
+}
+
+.chip--blue {
   @apply bg-blue-500 text-white;
 }
 
-.pill--primary {
+.chip--primary {
   @apply bg-primary text-white;
 }
 
-.pill--secondary {
+.chip--secondary {
   @apply bg-secondary text-white;
 }
 
-.pill--neutral {
+.chip--neutral {
   @apply bg-neutral-light text-neutral;
 }
 
-.pill--teal {
+.chip--teal {
   @apply bg-theme-teal text-gray-700;
 }
 
-.pill--purple {
+.chip--purple {
   @apply bg-theme-purple text-white;
 }
 
-.pill--xs {
-  @apply text-xs;
-}
-
-.pill--sm {
-  @apply text-sm;
-}
-
-.pill--lg {
-  @apply text-lg;
-}
-
-.pill__inner {
-  @apply inline-flex items-center p-1;
-}
-
-.pill__inner > * {
-  @apply inline-block ml-1 leading-none;
-}
-
-.pill__inner > *:last-child {
-  @apply mr-1;
-}
-
-.pill__pre:not(.pill__badge) {
-  @apply ml-xs;
-}
-
-.pill__pre.pill__badge {
-  @apply ml-0;
-}
-
-.pill__badge {
+.chip--pill {
   @apply rounded-full;
 }
 
-.pill__badge--white {
-  @apply bg-white text-gray-700;
+.chip__inner {
+  @apply inline-flex items-center h-full;
+  max-width: var(--chip-max-width);
 }
 
-.pill__icon {
-  @apply w-4-em h-4-em;
+.chip__badge {
+  @apply flex-none text-base-em;
+  margin: 0 var(--chip-badge-spacing-x);
 }
 
-.pill__icon .icon {
-  @apply block leading-none;
+.chip__icon {
+  @apply flex-none w-6-em h-6-em p-1-em;
+  margin: 0 var(--chip-icon-spacing-x);
 }
 
-.pill__badge .icon {
-  @apply p-xs-em;
+.chip__text {
+  margin: 0 var(--chip-text-spacing-x);
+  @apply flex-1 truncate;
 }
 
-.pill__text {
-  @apply text-base-em leading-none;
+.chip__icon ~ .chip__text {
+  margin-left: calc(-0.75 * var(--chip-icon-spacing-x));
 }
 
-.pill-row {
-  @apply flex flex-row flex-wrap;
+.chip__text ~ .chip__icon {
+  margin-left: calc(-1.5 * var(--chip-icon-spacing-x));
 }
 
-.pill-row--spaced .pill:not(:last-child) {
+.chip__badge ~ .chip__text {
+  @apply ml-0;
+}
+
+.chip__text ~ .chip__badge {
+  margin-left: calc(
+    -1 * (var(--chip-text-spacing-x) - var(--chip-badge-spacing-x))
+  );
+}
+
+.chip--pill .chip__badge:last-child {
   @apply mr-1;
 }
+
+.chip--pill .chip__badge:first-child {
+  @apply ml-1;
+}
+
+.chip-row {
+  --chip-row-padding: 0.5rem;
+  --chip-row-item-spacing: 0.25rem;
+  @apply flex flex-wrap flex-row flex-1;
+}
+
+.chip-row--spaced > *.chip {
+  margin: var(--chip-row-item-spacing);
+}
+
+.chip-row--spaced > *.chip:last-child {
+  @apply mr-0;
+}
+
 
 /*** Match Edit ***/
 

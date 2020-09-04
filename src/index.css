@@ -612,15 +612,15 @@ video {
   --badge-size-xs: 0.9375rem;
   --badge-size-sm: 1rem;
   --badge-size-md: 1.125rem;
-  --badge-size-base: 1.25rem;
   --badge-size-lg: 1.5rem;
+  --badge-size-default: var(--badge-size-md);
   --badge-size-xl: 1.75rem;
   --badge-size-2xl: 2rem;
-  --chip-size-xs: 0.9375rem;
-  --chip-size-sm: 1rem;
-  --chip-size-md: 1.125rem;
-  --chip-size-base: 1.25rem;
-  --chip-size-lg: 1.5rem;
+  --chip-size-xs: 0.625rem;
+  --chip-size-sm: 0.75rem;
+  --chip-size-md: 0.875rem;
+  --chip-size-lg: 1rem;
+  --chip-size-default: var(--chip-size-md);
   --color-blue: #014ce4;
   --color-indigo: #001399;
   --color-purple: #aa54ff;
@@ -657,24 +657,27 @@ html {
   height: 100%;
 }
 
-/*** Badges ***/
+/*** Badge ***/
 
 .badge {
+  --badge-width: 1.375em;
+  --badge-height: 1.375em;
   --badge-padding: 0.1875em;
+  --badge-full-padding: 16.666667%;
+  font-size: var(--badge-size-base);
   display: inline-block;
   border-radius: 9999px;
-  width: 1em;
-  height: 1em;
   text-align: center;
-  font-size: var(--badge-size-base);
+  color: currentColor;
+  width: var(--badge-width);
+  height: var(--badge-height);
   padding: var(--badge-padding);
 }
 
 .badge--full {
-  --badge-padding-full: 0.1875em;
   width: 100%;
   height: 100%;
-  padding: var(--badge-padding-full);
+  padding: var(--badge-full-padding);
 }
 
 .badge--xs {
@@ -705,15 +708,14 @@ html {
   --bg-opacity: 1;
   background-color: #fff;
   background-color: rgba(255, 255, 255, var(--bg-opacity));
-  --text-opacity: 1;
-  color: #4a5568;
-  color: rgba(74, 85, 104, var(--text-opacity));
+  color: var(--color-neutral);
 }
 
 .badge__icon {
   display: block;
   width: 100%;
   height: 100%;
+  vertical-align: top;
 }
 
 /*** Buttons ***/
@@ -876,20 +878,39 @@ html {
   border-bottom-right-radius: 0.5rem;
 }
 
-/*** Pills ***/
+/*** Chips ***/
 
-.pill {
-  display: inline-flex;
-  margin-top: 0.25rem;
-  margin-bottom: 0.25rem;
-  border-radius: 9999px;
-  font-size: 1rem;
-  line-height: 1.375;
+.chip {
+  --chip-text-spacing-x: 0.5rem;
+  --chip-badge-spacing-x: 0.25rem;
+  --chip-icon-spacing-x: 0.25rem;
+  --chip-max-width: 160px;
+  font-size: var(--chip-size-default);
+  display: inline-block;
+  height: 2em;
+  border-radius: 0.125rem;
+  overflow: hidden;
   -webkit-user-select: none;
           user-select: none;
 }
 
-.pill--blue {
+.chip--xs {
+  font-size: var(--chip-size-xs);
+}
+
+.chip--sm {
+  font-size: var(--chip-size-sm);
+}
+
+.chip--md {
+  font-size: var(--chip-size-md);
+}
+
+.chip--lg {
+  font-size: var(--chip-size-lg);
+}
+
+.chip--blue {
   --bg-opacity: 1;
   background-color: #4299e1;
   background-color: rgba(66, 153, 225, var(--bg-opacity));
@@ -898,115 +919,113 @@ html {
   color: rgba(255, 255, 255, var(--text-opacity));
 }
 
-.pill--primary {
+.chip--primary {
   background-color: var(--color-primary);
   --text-opacity: 1;
   color: #fff;
   color: rgba(255, 255, 255, var(--text-opacity));
 }
 
-.pill--secondary {
+.chip--secondary {
   background-color: var(--color-secondary);
   --text-opacity: 1;
   color: #fff;
   color: rgba(255, 255, 255, var(--text-opacity));
 }
 
-.pill--neutral {
+.chip--neutral {
   background-color: var(--color-neutral-light);
   color: var(--color-neutral);
 }
 
-.pill--teal {
+.chip--teal {
   background-color: var(--color-teal);
   --text-opacity: 1;
   color: #4a5568;
   color: rgba(74, 85, 104, var(--text-opacity));
 }
 
-.pill--purple {
+.chip--purple {
   background-color: var(--color-purple);
   --text-opacity: 1;
   color: #fff;
   color: rgba(255, 255, 255, var(--text-opacity));
 }
 
-.pill--xs {
-  font-size: 0.75rem;
-}
-
-.pill--sm {
-  font-size: 0.875rem;
-}
-
-.pill--lg {
-  font-size: 1.125rem;
-}
-
-.pill__inner {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.25rem;
-}
-
-.pill__inner > * {
-  display: inline-block;
-  margin-left: 0.25rem;
-  line-height: 1;
-}
-
-.pill__inner > *:last-child {
-  margin-right: 0.25rem;
-}
-
-.pill__pre:not(.pill__badge) {
-  margin-left: 0.125rem;
-}
-
-.pill__pre.pill__badge {
-  margin-left: 0;
-}
-
-.pill__badge {
+.chip--pill {
   border-radius: 9999px;
 }
 
-.pill__badge--white {
-  --bg-opacity: 1;
-  background-color: #fff;
-  background-color: rgba(255, 255, 255, var(--bg-opacity));
-  --text-opacity: 1;
-  color: #4a5568;
-  color: rgba(74, 85, 104, var(--text-opacity));
+.chip__inner {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+  max-width: var(--chip-max-width);
 }
 
-.pill__icon {
-  width: 1em;
-  height: 1em;
-}
-
-.pill__icon .icon {
-  display: block;
-  line-height: 1;
-}
-
-.pill__badge .icon {
-  padding: 0.125em;
-}
-
-.pill__text {
+.chip__badge {
+  flex: none;
   font-size: 1em;
-  line-height: 1;
+  margin: 0 var(--chip-badge-spacing-x);
 }
 
-.pill-row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+.chip__icon {
+  flex: none;
+  width: 1.5em;
+  height: 1.5em;
+  padding: 0.25em;
+  margin: 0 var(--chip-icon-spacing-x);
 }
 
-.pill-row--spaced .pill:not(:last-child) {
+.chip__text {
+  margin: 0 var(--chip-text-spacing-x);
+  flex: 1 1 0%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chip__icon ~ .chip__text {
+  margin-left: calc(-0.75 * var(--chip-icon-spacing-x));
+}
+
+.chip__text ~ .chip__icon {
+  margin-left: calc(-1.5 * var(--chip-icon-spacing-x));
+}
+
+.chip__badge ~ .chip__text {
+  margin-left: 0;
+}
+
+.chip__text ~ .chip__badge {
+  margin-left: calc(
+    -1 * (var(--chip-text-spacing-x) - var(--chip-badge-spacing-x))
+  );
+}
+
+.chip--pill .chip__badge:last-child {
   margin-right: 0.25rem;
+}
+
+.chip--pill .chip__badge:first-child {
+  margin-left: 0.25rem;
+}
+
+.chip-row {
+  --chip-row-padding: 0.5rem;
+  --chip-row-item-spacing: 0.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  flex: 1 1 0%;
+}
+
+.chip-row--spaced > *.chip {
+  margin: var(--chip-row-item-spacing);
+}
+
+.chip-row--spaced > *.chip:last-child {
+  margin-right: 0;
 }
 
 /*** Match Edit ***/
