@@ -9,6 +9,8 @@ $electricPurple: #aa54ff;
 $fluorescentBlue: #01e7e4;
 $gray: #718096;
 $lightGray: #e2e8f0;
+$darkGray: #2d3748;
+$charcoal: #364359; /* charcoal */
 
 :root {
   --badge-size-xs: 0.9375rem;
@@ -24,13 +26,17 @@ $lightGray: #e2e8f0;
   --chip-size-lg: 1rem;
   --chip-size-default: var(--chip-size-md);
   --color-blue: $blue;
+  --color-charcoal: $charcoal;
   --color-indigo: $zaffre;
-  --color-purple: $electricPurple;
-  --color-teal: $fluorescentBlue;
-  --color-primary: $zaffre;
-  --color-secondary: $electricPurple;
   --color-neutral: $gray;
   --color-neutral-light: $lightGray;
+  --color-purple: $electricPurple;
+  --color-primary: $zaffre;
+  --color-secondary: $electricPurple;
+  --color-teal: $fluorescentBlue;
+  --game-card-min-width: 300px;
+  --game-title-color: var(--color-charcoal);
+  --match-card-min-width: 180px;
 }
 
 /*** Globals ***/
@@ -311,7 +317,6 @@ html {
   @apply mr-0;
 }
 
-
 /*** Match Edit ***/
 
 /*.match-edit-pane {}*/
@@ -472,7 +477,11 @@ html {
 }
 
 .matches__card-grid {
-  @apply grid gap-3 grid-cols-auto-min-w-180;
+  @apply grid gap-3;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(var(--match-card-min-width), 1fr)
+  );
 }
 
 @screen md {
@@ -533,17 +542,21 @@ html {
 /*** Dashboard ***/
 
 .dashboard__card-grid {
-  @apply grid gap-3 grid-cols-auto-min-w-320 m-4;
+  @apply grid gap-3 m-4;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(var(--game-card-min-width), 1fr)
+  );
 }
 
 /*** Game Card ***/
 
 .game-card {
-  @apply relative border rounded-xl border-gray-300 bg-white z-0 shadow-none transition-all duration-300 ease-in-out;
+  @apply relative flex flex-col border rounded-xl border-gray-800 border-opacity-10 bg-white z-0 shadow-none transition-all duration-300 ease-in-out overflow-hidden;
 }
 
 .game-card:hover {
-  @apply border-gray-200;
+  @apply border-opacity-25;
 }
 
 .game-card::after {
@@ -555,16 +568,8 @@ html {
   @apply opacity-100;
 }
 
-.game-card__body:hover .game-card__delete {
-  @apply fill-current flex items-center justify-center text-pink-400 bg-pink-100 opacity-75 transition-all duration-200 ease-in-out z-10;
-}
-
-.game-card--can-delete .game-card__body:hover .game-card__delete {
-  @apply text-pink-700 bg-pink-200 opacity-50;
-}
-
 .game-card__body {
-  @apply relative px-6 py-4;
+  @apply relative flex-1 flex flex-col px-6 py-4;
   min-height: 7rem;
 }
 
@@ -581,7 +586,10 @@ html {
 }
 
 .game-card__title {
-  @apply pr-20;
+  @apply flex-1 pr-20 mb-4 font-montserrat tracking-tight font-extrabold;
+  font-size: 1.1875rem;
+  line-height: 1.1;
+  color: var(--game-title-color);
 }
 
 .game-card__details {
@@ -589,12 +597,21 @@ html {
 }
 
 .game-card__footer {
-  @apply px-6 py-4 rounded-b-xl bg-gray-100 overflow-hidden;
+  @apply flex-none px-6 py-4 rounded-b-xl bg-gray-100 overflow-hidden;
 }
 
 .game-card__actions {
   @apply w-full;
 }
+
+.game-card__body:hover .game-card__delete {
+  @apply fill-current flex items-center justify-center text-pink-400 bg-pink-100 opacity-75 transition-all duration-200 ease-in-out z-10;
+}
+
+.game-card--can-delete .game-card__body:hover .game-card__delete {
+  @apply text-pink-700 bg-pink-200 opacity-50;
+}
+
 
 /*.btn {
   @apply outline-none cursor-pointer;

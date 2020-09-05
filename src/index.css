@@ -606,7 +606,7 @@ video {
   }
 }
 
-/*** Application Colors ***/
+/*** Application Colors ***/ /* charcoal */
 
 :root {
   --badge-size-xs: 0.9375rem;
@@ -622,13 +622,17 @@ video {
   --chip-size-lg: 1rem;
   --chip-size-default: var(--chip-size-md);
   --color-blue: #014ce4;
+  --color-charcoal: #364359;
   --color-indigo: #001399;
-  --color-purple: #aa54ff;
-  --color-teal: #01e7e4;
-  --color-primary: #001399;
-  --color-secondary: #aa54ff;
   --color-neutral: #718096;
   --color-neutral-light: #e2e8f0;
+  --color-purple: #aa54ff;
+  --color-primary: #001399;
+  --color-secondary: #aa54ff;
+  --color-teal: #01e7e4;
+  --game-card-min-width: 300px;
+  --game-title-color: var(--color-charcoal);
+  --match-card-min-width: 180px;
 }
 
 /*** Globals ***/
@@ -1291,7 +1295,10 @@ html {
   grid-gap: 0.75rem;
   grid-gap: 0.75rem;
   gap: 0.75rem;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(var(--match-card-min-width), 1fr)
+  );
 }
 
 @media (min-width: 768px) {
@@ -1418,19 +1425,25 @@ html {
   grid-gap: 0.75rem;
   grid-gap: 0.75rem;
   gap: 0.75rem;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   margin: 1rem;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(var(--game-card-min-width), 1fr)
+  );
 }
 
 /*** Game Card ***/
 
 .game-card {
   position: relative;
+  display: flex;
+  flex-direction: column;
   border-width: 1px;
   border-radius: 0.75rem;
   --border-opacity: 1;
-  border-color: #e2e8f0;
-  border-color: rgba(226, 232, 240, var(--border-opacity));
+  border-color: #2d3748;
+  border-color: rgba(45, 55, 72, var(--border-opacity));
+  --border-opacity: 0.1;
   --bg-opacity: 1;
   background-color: #fff;
   background-color: rgba(255, 255, 255, var(--bg-opacity));
@@ -1439,12 +1452,11 @@ html {
   transition-property: all;
   transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
 }
 
 .game-card:hover {
-  --border-opacity: 1;
-  border-color: #edf2f7;
-  border-color: rgba(237, 242, 247, var(--border-opacity));
+  --border-opacity: 0.25;
 }
 
 .game-card::after {
@@ -1468,36 +1480,11 @@ html {
   opacity: 1;
 }
 
-.game-card__body:hover .game-card__delete {
-  fill: currentColor;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  --text-opacity: 1;
-  color: #f687b3;
-  color: rgba(246, 135, 179, var(--text-opacity));
-  --bg-opacity: 1;
-  background-color: #fff5f7;
-  background-color: rgba(255, 245, 247, var(--bg-opacity));
-  opacity: 0.75;
-  transition-property: all;
-  transition-duration: 200ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: 10;
-}
-
-.game-card--can-delete .game-card__body:hover .game-card__delete {
-  --text-opacity: 1;
-  color: #b83280;
-  color: rgba(184, 50, 128, var(--text-opacity));
-  --bg-opacity: 1;
-  background-color: #fed7e2;
-  background-color: rgba(254, 215, 226, var(--bg-opacity));
-  opacity: 0.5;
-}
-
 .game-card__body {
   position: relative;
+  flex: 1 1 0%;
+  display: flex;
+  flex-direction: column;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   padding-top: 1rem;
@@ -1540,7 +1527,15 @@ html {
 }
 
 .game-card__title {
+  flex: 1 1 0%;
   padding-right: 5rem;
+  margin-bottom: 1rem;
+  font-family: Montserrat, sans-serif;
+  letter-spacing: -0.025em;
+  font-weight: 800;
+  font-size: 1.1875rem;
+  line-height: 1.1;
+  color: var(--game-title-color);
 }
 
 .game-card__details {
@@ -1548,6 +1543,7 @@ html {
 }
 
 .game-card__footer {
+  flex: none;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   padding-top: 1rem;
@@ -1562,6 +1558,34 @@ html {
 
 .game-card__actions {
   width: 100%;
+}
+
+.game-card__body:hover .game-card__delete {
+  fill: currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  --text-opacity: 1;
+  color: #f687b3;
+  color: rgba(246, 135, 179, var(--text-opacity));
+  --bg-opacity: 1;
+  background-color: #fff5f7;
+  background-color: rgba(255, 245, 247, var(--bg-opacity));
+  opacity: 0.75;
+  transition-property: all;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 10;
+}
+
+.game-card--can-delete .game-card__body:hover .game-card__delete {
+  --text-opacity: 1;
+  color: #b83280;
+  color: rgba(184, 50, 128, var(--text-opacity));
+  --bg-opacity: 1;
+  background-color: #fed7e2;
+  background-color: rgba(254, 215, 226, var(--bg-opacity));
+  opacity: 0.5;
 }
 
 /*.btn {
@@ -3106,6 +3130,10 @@ html {
 
 .divide-opacity-0 > :not(template) ~ :not(template) {
   --divide-opacity: 0;
+}
+
+.divide-opacity-10 > :not(template) ~ :not(template) {
+  --divide-opacity: 0.1;
 }
 
 .divide-opacity-25 > :not(template) ~ :not(template) {
@@ -6884,6 +6912,10 @@ html {
   --border-opacity: 0;
 }
 
+.border-opacity-10 {
+  --border-opacity: 0.1;
+}
+
 .border-opacity-25 {
   --border-opacity: 0.25;
 }
@@ -6904,6 +6936,10 @@ html {
   --border-opacity: 0;
 }
 
+.hover\:border-opacity-10:hover {
+  --border-opacity: 0.1;
+}
+
 .hover\:border-opacity-25:hover {
   --border-opacity: 0.25;
 }
@@ -6922,6 +6958,10 @@ html {
 
 .focus\:border-opacity-0:focus {
   --border-opacity: 0;
+}
+
+.focus\:border-opacity-10:focus {
+  --border-opacity: 0.1;
 }
 
 .focus\:border-opacity-25:focus {
@@ -16156,14 +16196,6 @@ html {
   grid-template-columns: none;
 }
 
-.grid-cols-auto-min-w-180 {
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-}
-
-.grid-cols-auto-min-w-320 {
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-}
-
 .col-auto {
   grid-column: auto;
 }
@@ -20540,6 +20572,10 @@ html {
     --divide-opacity: 0;
   }
 
+  .sm\:divide-opacity-10 > :not(template) ~ :not(template) {
+    --divide-opacity: 0.1;
+  }
+
   .sm\:divide-opacity-25 > :not(template) ~ :not(template) {
     --divide-opacity: 0.25;
   }
@@ -24316,6 +24352,10 @@ html {
     --border-opacity: 0;
   }
 
+  .sm\:border-opacity-10 {
+    --border-opacity: 0.1;
+  }
+
   .sm\:border-opacity-25 {
     --border-opacity: 0.25;
   }
@@ -24336,6 +24376,10 @@ html {
     --border-opacity: 0;
   }
 
+  .sm\:hover\:border-opacity-10:hover {
+    --border-opacity: 0.1;
+  }
+
   .sm\:hover\:border-opacity-25:hover {
     --border-opacity: 0.25;
   }
@@ -24354,6 +24398,10 @@ html {
 
   .sm\:focus\:border-opacity-0:focus {
     --border-opacity: 0;
+  }
+
+  .sm\:focus\:border-opacity-10:focus {
+    --border-opacity: 0.1;
   }
 
   .sm\:focus\:border-opacity-25:focus {
@@ -33588,14 +33636,6 @@ html {
     grid-template-columns: none;
   }
 
-  .sm\:grid-cols-auto-min-w-180 {
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  }
-
-  .sm\:grid-cols-auto-min-w-320 {
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  }
-
   .sm\:col-auto {
     grid-column: auto;
   }
@@ -37971,6 +38011,10 @@ html {
     --divide-opacity: 0;
   }
 
+  .md\:divide-opacity-10 > :not(template) ~ :not(template) {
+    --divide-opacity: 0.1;
+  }
+
   .md\:divide-opacity-25 > :not(template) ~ :not(template) {
     --divide-opacity: 0.25;
   }
@@ -41747,6 +41791,10 @@ html {
     --border-opacity: 0;
   }
 
+  .md\:border-opacity-10 {
+    --border-opacity: 0.1;
+  }
+
   .md\:border-opacity-25 {
     --border-opacity: 0.25;
   }
@@ -41767,6 +41815,10 @@ html {
     --border-opacity: 0;
   }
 
+  .md\:hover\:border-opacity-10:hover {
+    --border-opacity: 0.1;
+  }
+
   .md\:hover\:border-opacity-25:hover {
     --border-opacity: 0.25;
   }
@@ -41785,6 +41837,10 @@ html {
 
   .md\:focus\:border-opacity-0:focus {
     --border-opacity: 0;
+  }
+
+  .md\:focus\:border-opacity-10:focus {
+    --border-opacity: 0.1;
   }
 
   .md\:focus\:border-opacity-25:focus {
@@ -51019,14 +51075,6 @@ html {
     grid-template-columns: none;
   }
 
-  .md\:grid-cols-auto-min-w-180 {
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  }
-
-  .md\:grid-cols-auto-min-w-320 {
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  }
-
   .md\:col-auto {
     grid-column: auto;
   }
@@ -55402,6 +55450,10 @@ html {
     --divide-opacity: 0;
   }
 
+  .lg\:divide-opacity-10 > :not(template) ~ :not(template) {
+    --divide-opacity: 0.1;
+  }
+
   .lg\:divide-opacity-25 > :not(template) ~ :not(template) {
     --divide-opacity: 0.25;
   }
@@ -59178,6 +59230,10 @@ html {
     --border-opacity: 0;
   }
 
+  .lg\:border-opacity-10 {
+    --border-opacity: 0.1;
+  }
+
   .lg\:border-opacity-25 {
     --border-opacity: 0.25;
   }
@@ -59198,6 +59254,10 @@ html {
     --border-opacity: 0;
   }
 
+  .lg\:hover\:border-opacity-10:hover {
+    --border-opacity: 0.1;
+  }
+
   .lg\:hover\:border-opacity-25:hover {
     --border-opacity: 0.25;
   }
@@ -59216,6 +59276,10 @@ html {
 
   .lg\:focus\:border-opacity-0:focus {
     --border-opacity: 0;
+  }
+
+  .lg\:focus\:border-opacity-10:focus {
+    --border-opacity: 0.1;
   }
 
   .lg\:focus\:border-opacity-25:focus {
@@ -68450,14 +68514,6 @@ html {
     grid-template-columns: none;
   }
 
-  .lg\:grid-cols-auto-min-w-180 {
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  }
-
-  .lg\:grid-cols-auto-min-w-320 {
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  }
-
   .lg\:col-auto {
     grid-column: auto;
   }
@@ -72833,6 +72889,10 @@ html {
     --divide-opacity: 0;
   }
 
+  .xl\:divide-opacity-10 > :not(template) ~ :not(template) {
+    --divide-opacity: 0.1;
+  }
+
   .xl\:divide-opacity-25 > :not(template) ~ :not(template) {
     --divide-opacity: 0.25;
   }
@@ -76609,6 +76669,10 @@ html {
     --border-opacity: 0;
   }
 
+  .xl\:border-opacity-10 {
+    --border-opacity: 0.1;
+  }
+
   .xl\:border-opacity-25 {
     --border-opacity: 0.25;
   }
@@ -76629,6 +76693,10 @@ html {
     --border-opacity: 0;
   }
 
+  .xl\:hover\:border-opacity-10:hover {
+    --border-opacity: 0.1;
+  }
+
   .xl\:hover\:border-opacity-25:hover {
     --border-opacity: 0.25;
   }
@@ -76647,6 +76715,10 @@ html {
 
   .xl\:focus\:border-opacity-0:focus {
     --border-opacity: 0;
+  }
+
+  .xl\:focus\:border-opacity-10:focus {
+    --border-opacity: 0.1;
   }
 
   .xl\:focus\:border-opacity-25:focus {
@@ -85879,14 +85951,6 @@ html {
 
   .xl\:grid-cols-none {
     grid-template-columns: none;
-  }
-
-  .xl\:grid-cols-auto-min-w-180 {
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  }
-
-  .xl\:grid-cols-auto-min-w-320 {
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   }
 
   .xl\:col-auto {

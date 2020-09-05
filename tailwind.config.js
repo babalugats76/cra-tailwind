@@ -2,6 +2,9 @@ module.exports = {
   purge: [],
   theme: {
     extend: {
+      borderOpacity: {
+        '10': '0.1',
+      },
       borderRadius: {
         xl: '0.75rem',
       },
@@ -25,11 +28,6 @@ module.exports = {
       fontSize: {
         md: '0.9375rem',
         'base-em': '1em',
-      },
-      gridTemplateColumns: {
-        // autosize grids
-        'auto-min-w-180': 'repeat(auto-fill, minmax(180px, 1fr))',
-        'auto-min-w-320': 'repeat(auto-fill, minmax(320px, 1fr))',
       },
       inset: {
         // add 50% as an option to positioning classes
@@ -55,7 +53,7 @@ module.exports = {
         '20-em': '5em',
         xs: '0.125rem',
         sm: '0.375rem',
-        '7': '1.75rem',
+        7: '1.75rem',
       },
       textColor: {
         inherit: 'inherit',
