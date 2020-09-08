@@ -621,6 +621,7 @@ video {
   --chip-size-md: 0.875rem;
   --chip-size-lg: 1rem;
   --chip-size-default: var(--chip-size-md);
+  --clamp-lines-default: 2;
   --color-blue: #014ce4;
   --color-charcoal: #364359;
   --color-indigo: #001399;
@@ -639,6 +640,20 @@ video {
 
 html {
   font-family: "Lexend Deca", sans-serif;
+}
+
+/*** Clamping ***/
+
+@supports (-webkit-line-clamp: 2) {
+  .clamp-lines {
+    display: -webkit-box !important;
+    -webkit-line-clamp: var(--clamp-lines, var(--clamp-lines-default));
+    /* autoprefixer: ignore next */
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    word-break: break-word !important;
+  }
 }
 
 /*** Vectors ***/
@@ -1537,6 +1552,7 @@ html {
 }
 
 .game-card__title {
+  --clamp-lines: 2;
   flex: 1 1 0%;
   padding-right: 5rem;
   margin-bottom: 1rem;
