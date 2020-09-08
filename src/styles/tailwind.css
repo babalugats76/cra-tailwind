@@ -44,6 +44,15 @@ html {
   @apply font-lexend-deca;
 }
 
+/*** Vectors ***/
+.match-rainbow {
+  background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 250 250'%3E%3Ccircle cx='125' cy='125' r='125' fill='%2301e7e4'/%3E%3Crect ry='9' y='47' x='128' height='75' width='75' fill='%23014ce4'/%3E%3Crect ry='9' y='47' x='47' height='75' width='75' fill='%23aa54ff'/%3E%3Crect ry='9' y='128' x='128' height='75' width='75' fill='%23001399'/%3E%3Crect ry='9' y='128' x='47' height='75' width='75' fill='%23fff'/%3E%3C/svg%3E");
+}
+
+.match-basic {
+  background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 250 250'%3E%3Ccircle cx='125' cy='125' r='125' fill='%2301e7e4'/%3E%3Cg fill='%23fff'%3E%3Crect ry='9' y='47' x='128' height='75' width='75'/%3E%3Crect ry='9' y='47' x='47' height='75' width='75'/%3E%3Crect ry='9' y='128' x='128' height='75' width='75'/%3E%3Crect ry='9' y='128' x='47' height='75' width='75'/%3E%3C/g%3E%3C/svg%3E");
+}
+
 /*** Icons ***/
 
 .icon {
@@ -611,7 +620,6 @@ html {
 .game-card--can-delete .game-card__body:hover .game-card__delete {
   @apply text-pink-700 bg-pink-200 opacity-50;
 }
-
 
 /*.btn {
   @apply outline-none cursor-pointer;
