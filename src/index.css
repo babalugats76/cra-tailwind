@@ -643,12 +643,31 @@ html {
 
 /*** Vectors ***/
 
-.match-rainbow {
-  background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 250 250'%3E%3Ccircle cx='125' cy='125' r='125' fill='%2301e7e4'/%3E%3Crect ry='9' y='47' x='128' height='75' width='75' fill='%23014ce4'/%3E%3Crect ry='9' y='47' x='47' height='75' width='75' fill='%23aa54ff'/%3E%3Crect ry='9' y='128' x='128' height='75' width='75' fill='%23001399'/%3E%3Crect ry='9' y='128' x='47' height='75' width='75' fill='%23fff'/%3E%3C/svg%3E");
+.icon--match-rainbow {
+  /* Processed with https://vecta.io/nano and added width="100%" and height="100%" plus viewBox, e.g., 0 0 250 250 */
+  /* Base 64 fallback - https://b64.io - just add +xml to type */
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj48Y2lyY2xlIGN4PSIxMjUiIGN5PSIxMjUiIHI9IjEyNSIgZmlsbD0iIzAxZTdlNCIvPjxyZWN0IHJ5PSI5IiB5PSI0NyIgeD0iMTI4IiBoZWlnaHQ9Ijc1IiB3aWR0aD0iNzUiIGZpbGw9IiMwMTRjZTQiLz48cmVjdCByeT0iOSIgeT0iNDciIHg9IjQ3IiBoZWlnaHQ9Ijc1IiB3aWR0aD0iNzUiIGZpbGw9IiNhYTU0ZmYiLz48cmVjdCByeT0iOSIgeT0iMTI4IiB4PSIxMjgiIGhlaWdodD0iNzUiIHdpZHRoPSI3NSIgZmlsbD0iIzAwMTM5OSIvPjxyZWN0IHJ5PSI5IiB5PSIxMjgiIHg9IjQ3IiBoZWlnaHQ9Ijc1IiB3aWR0aD0iNzUiIGZpbGw9IiNmZmYiLz48L3N2Zz4=);
+  /* Encoded SVG - https://yoksel.github.io/url-encoder/ */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 250 250'%3E%3Ccircle cx='125' cy='125' r='125' fill='%2301e7e4'/%3E%3Crect ry='9' y='47' x='128' height='75' width='75' fill='%23014ce4'/%3E%3Crect ry='9' y='47' x='47' height='75' width='75' fill='%23aa54ff'/%3E%3Crect ry='9' y='128' x='128' height='75' width='75' fill='%23001399'/%3E%3Crect ry='9' y='128' x='47' height='75' width='75' fill='%23fff'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
 }
 
-.match-basic {
-  background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 250 250'%3E%3Ccircle cx='125' cy='125' r='125' fill='%2301e7e4'/%3E%3Cg fill='%23fff'%3E%3Crect ry='9' y='47' x='128' height='75' width='75'/%3E%3Crect ry='9' y='47' x='47' height='75' width='75'/%3E%3Crect ry='9' y='128' x='128' height='75' width='75'/%3E%3Crect ry='9' y='128' x='47' height='75' width='75'/%3E%3C/g%3E%3C/svg%3E");
+.icon--match-basic {
+  /* Processed with https://vecta.io/nano and added width="100%" and height="100%" plus viewBox, e.g., 0 0 250 250 */
+  /* Base 64 fallback - https://b64.io - just add +xml to type */
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj48Y2lyY2xlIGN4PSIxMjUiIGN5PSIxMjUiIHI9IjEyNSIgZmlsbD0iIzAxZTdlNCIvPjxnIGZpbGw9IiNmZmYiPjxyZWN0IHJ5PSI5IiB5PSI0NyIgeD0iMTI4IiBoZWlnaHQ9Ijc1IiB3aWR0aD0iNzUiLz48cmVjdCByeT0iOSIgeT0iNDciIHg9IjQ3IiBoZWlnaHQ9Ijc1IiB3aWR0aD0iNzUiLz48cmVjdCByeT0iOSIgeT0iMTI4IiB4PSIxMjgiIGhlaWdodD0iNzUiIHdpZHRoPSI3NSIvPjxyZWN0IHJ5PSI5IiB5PSIxMjgiIHg9IjQ3IiBoZWlnaHQ9Ijc1IiB3aWR0aD0iNzUiLz48L2c+PC9zdmc+);
+  /* Encoded SVG - https://yoksel.github.io/url-encoder/ */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 250 250'%3E%3Ccircle cx='125' cy='125' r='125' fill='%2301e7e4'/%3E%3Cg fill='%23fff'%3E%3Crect ry='9' y='47' x='128' height='75' width='75'/%3E%3Crect ry='9' y='47' x='47' height='75' width='75'/%3E%3Crect ry='9' y='128' x='128' height='75' width='75'/%3E%3Crect ry='9' y='128' x='47' height='75' width='75'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+}
+
+.icon--match-game {
+  /* Processed with https://vecta.io/nano and added width="100%" and height="100%" plus viewBox, e.g., 0 0 250 250 */
+  /* Base 64 fallback - https://b64.io - just add +xml to type */
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj48cGF0aCBkPSJNMTI1IDBDNTUuOTY0IDAgMCA1NS45NjQgMCAxMjVzNTUuOTY0IDEyNSAxMjUgMTI1VjB6IiBmaWxsPSIjMDFlN2U0Ii8+PHBhdGggZD0iTTEyNSAwdjI1MGM2OS4wMzYgMCAxMjUtNTUuOTY0IDEyNS0xMjVTMTk0LjAzNiAwIDEyNSAweiIgZmlsbD0iI2FhNTRmZiIvPjxjaXJjbGUgY3g9Ii0yMzEuNDU1IiBjeT0iLTM2MC42IiByPSIxLjUiLz48Y2lyY2xlIGN4PSI1NjYuNTEzIiBjeT0iLTM4MC40MzkiIHI9IjEuNSIvPjxnIGZpbGw9IiNmZmYiPjxyZWN0IHdpZHRoPSI0MyIgaGVpZ2h0PSI0MyIgeD0iMjAiIHk9Ijc1IiByeT0iOSIvPjxyZWN0IHdpZHRoPSI0MyIgaGVpZ2h0PSI0MyIgeD0iNzIiIHk9Ijc1IiByeT0iOSIvPjxyZWN0IHdpZHRoPSI0MyIgaGVpZ2h0PSI0MyIgeD0iMjAiIHk9IjEzMiIgcnk9IjkiLz48cmVjdCB3aWR0aD0iNDMiIGhlaWdodD0iNDMiIHg9IjcyIiB5PSIxMzIiIHJ5PSI5Ii8+PC9nPjxnIGZpbGw9IiMwMDEzOTkiPjxyZWN0IHdpZHRoPSI0MyIgaGVpZ2h0PSI0MyIgeD0iMTM1IiB5PSI3NSIgcnk9IjkiLz48cmVjdCB3aWR0aD0iNDMiIGhlaWdodD0iNDMiIHg9IjE4NyIgeT0iNzUiIHJ5PSI5Ii8+PHJlY3Qgd2lkdGg9IjQzIiBoZWlnaHQ9IjQzIiB4PSIxMzUiIHk9IjEzMiIgcnk9IjkiLz48cmVjdCB3aWR0aD0iNDMiIGhlaWdodD0iNDMiIHg9IjE4NyIgeT0iMTMyIiByeT0iOSIvPjwvZz48L3N2Zz4=);
+  /* Encoded SVG - https://yoksel.github.io/url-encoder/ */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 250 250'%3E%3Cpath d='M125 0C55.964 0 0 55.964 0 125s55.964 125 125 125V0z' fill='%2301e7e4'/%3E%3Cpath d='M125 0v250c69.036 0 125-55.964 125-125S194.036 0 125 0z' fill='%23aa54ff'/%3E%3Ccircle cx='-231.455' cy='-360.6' r='1.5'/%3E%3Ccircle cx='566.513' cy='-380.439' r='1.5'/%3E%3Cg fill='%23fff'%3E%3Crect width='43' height='43' x='20' y='75' ry='9'/%3E%3Crect width='43' height='43' x='72' y='75' ry='9'/%3E%3Crect width='43' height='43' x='20' y='132' ry='9'/%3E%3Crect width='43' height='43' x='72' y='132' ry='9'/%3E%3C/g%3E%3Cg fill='%23001399'%3E%3Crect width='43' height='43' x='135' y='75' ry='9'/%3E%3Crect width='43' height='43' x='187' y='75' ry='9'/%3E%3Crect width='43' height='43' x='135' y='132' ry='9'/%3E%3Crect width='43' height='43' x='187' y='132' ry='9'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: no-repeat;
 }
 
 /*** Icons ***/
