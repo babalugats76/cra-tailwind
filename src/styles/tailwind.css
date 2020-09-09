@@ -25,6 +25,7 @@ $charcoal: #364359; /* charcoal */
   --chip-size-md: 0.875rem;
   --chip-size-lg: 1rem;
   --chip-size-default: var(--chip-size-md);
+  --clamp-lines-default: 2;
   --color-blue: $blue;
   --color-charcoal: $charcoal;
   --color-indigo: $zaffre;
@@ -42,6 +43,19 @@ $charcoal: #364359; /* charcoal */
 /*** Globals ***/
 html {
   @apply font-lexend-deca;
+}
+
+/*** Clamping ***/
+@supports (-webkit-line-clamp: 2) {
+  .clamp-lines {
+    display: -webkit-box !important;
+    -webkit-line-clamp: var(--clamp-lines, var(--clamp-lines-default));
+    /* autoprefixer: ignore next */
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    word-break: break-word !important;
+  }
 }
 
 /*** Vectors ***/
@@ -614,6 +628,7 @@ html {
 }
 
 .game-card__title {
+  --clamp-lines: 2;
   @apply flex-1 pr-20 mb-4 font-montserrat tracking-tight font-extrabold;
   font-size: 1.1875rem;
   line-height: 1.1;
