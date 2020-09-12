@@ -144,9 +144,9 @@ html {
   --start-color: rgba(var(--rgb-success-dark), var(--bg-opacity));
   --end-color: rgba(var(--rgb-success), var(--bg-opacity));
   color: rgba(var(--rgb-white), var(--text-opacity));
-  animation: 500ms cubic-bezier(0.85, 0, 0.15, 1) 0s 1 normal forwards bg_change,
-    350ms cubic-bezier(0.85, 0, 0.15, 1) 150ms 1 normal forwards bg_opacity,
-    350ms cubic-bezier(0.85, 0, 0.15, 1) 150ms 1 normal forwards text_opacity;
+  animation: 250ms cubic-bezier(0.85, 0, 0.15, 1) 0s 1 normal forwards bg_change,
+    125ms cubic-bezier(0.85, 0, 0.15, 1) 125ms 1 normal forwards bg_opacity,
+    125ms cubic-bezier(0.85, 0, 0.15, 1) 125ms 1 normal forwards text_opacity;
 }
 
 /*** Clamping ***/
