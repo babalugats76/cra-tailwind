@@ -3,12 +3,16 @@ module.exports = {
   theme: {
     extend: {
       borderOpacity: {
-        '10': '0.1',
+        10: '0.1',
       },
       borderRadius: {
         xl: '0.75rem',
       },
       colors: {
+        success: {
+          dark: 'var(--color-success-dark)',
+          default: 'var(--color-success)',
+        },
         primary: 'var(--color-primary)',
         secondary: 'var(--color-secondary)',
         neutral: {

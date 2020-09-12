@@ -10,7 +10,10 @@ $fluorescentBlue: #01e7e4;
 $gray: #718096;
 $lightGray: #e2e8f0;
 $darkGray: #2d3748;
-$charcoal: #364359; /* charcoal */
+$charcoal: #364359;
+$darkPastelGreen: #00c851;
+$aoEnglish: #007e33;
+$white: #ffffff;
 
 :root {
   --badge-size-xs: 0.9375rem;
@@ -34,15 +37,116 @@ $charcoal: #364359; /* charcoal */
   --color-purple: $electricPurple;
   --color-primary: $zaffre;
   --color-secondary: $electricPurple;
+  --color-success: $aoEnglish;
+  --color-success-dark: $darkPastelGreen;
   --color-teal: $fluorescentBlue;
+  --color-white: $white;
   --game-card-min-width: 300px;
   --game-title-color: var(--color-charcoal);
   --match-card-min-width: 180px;
+  --rgb-white: 255, 255, 255;
+  --rgb-success: 0, 200, 81; /* Ao English */
+  --rgb-success-dark: 0, 126, 51; /* Dark Pastel Green */
 }
 
 /*** Globals ***/
 html {
   @apply font-lexend-deca;
+}
+
+/*** Animations ***/
+@keyframes bg_change {
+  from {
+    background-color: var(--start-color);
+  }
+
+  to {
+    background-color: var(--end-color);
+  }
+}
+
+@keyframes bg_opacity {
+  0% {
+    --bg-opacity: 0;
+  }
+  10% {
+    --bg-opacity: 0.1;
+  }
+  20% {
+    --bg-opacity: 0.2;
+  }
+  30% {
+    --bg-opacity: 0.3;
+  }
+  40% {
+    --bg-opacity: 0.4;
+  }
+  50% {
+    --bg-opacity: 0.5;
+  }
+  60% {
+    --bg-opacity: 0.6;
+  }
+  70% {
+    --bg-opacity: 0.7;
+  }
+  80% {
+    --bg-opacity: 0.8;
+  }
+  90% {
+    --bg-opacity: 0.9;
+  }
+  100% {
+    --bg-opacity: 1;
+  }
+}
+
+@keyframes text_opacity {
+  0% {
+    --text-opacity: 0;
+  }
+  10% {
+    --text-opacity: 0.1;
+  }
+  20% {
+    --text-opacity: 0.2;
+  }
+  30% {
+    --text-opacity: 0.3;
+  }
+  40% {
+    --text-opacity: 0.4;
+  }
+  50% {
+    --text-opacity: 0.5;
+  }
+  60% {
+    --text-opacity: 0.6;
+  }
+  70% {
+    --text-opacity: 0.7;
+  }
+  80% {
+    --text-opacity: 0.8;
+  }
+  90% {
+    --text-opacity: 0.9;
+  }
+  100% {
+    --text-opacity: 1;
+  }
+}
+
+/*** States ***/
+.is-active--success {
+  --bg-opacity: 0;
+  --text-opacity: 0;
+  --start-color: rgba(var(--rgb-success-dark), var(--bg-opacity));
+  --end-color: rgba(var(--rgb-success), var(--bg-opacity));
+  color: rgba(var(--rgb-white), var(--text-opacity));
+  animation: 500ms cubic-bezier(0.85, 0, 0.15, 1) 0s 1 normal forwards bg_change,
+    350ms cubic-bezier(0.85, 0, 0.15, 1) 150ms 1 normal forwards bg_opacity,
+    350ms cubic-bezier(0.85, 0, 0.15, 1) 150ms 1 normal forwards text_opacity;
 }
 
 /*** Clamping ***/
