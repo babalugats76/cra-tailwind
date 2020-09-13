@@ -11,7 +11,7 @@ $gray: #718096;
 $lightGray: #e2e8f0;
 $darkGray: #2d3748;
 $charcoal: #364359;
-$darkPastelGreen: #00c851;
+$darkPastelGreen: #00CC52;
 $aoEnglish: #007e33;
 $white: #ffffff;
 
@@ -44,9 +44,8 @@ $white: #ffffff;
   --game-card-min-width: 300px;
   --game-title-color: var(--color-charcoal);
   --match-card-min-width: 180px;
-  --rgb-white: 255, 255, 255;
-  --rgb-success: 0, 200, 81; /* Ao English */
-  --rgb-success-dark: 0, 126, 51; /* Dark Pastel Green */
+  --rgb-success-400: 0, 204, 82; 
+  --rgb-success-600: 0, 163, 65;
 }
 
 /*** Globals ***/
@@ -141,9 +140,9 @@ html {
 .is-active--success {
   --bg-opacity: 0;
   --text-opacity: 0;
-  --start-color: rgba(var(--rgb-success-dark), var(--bg-opacity));
-  --end-color: rgba(var(--rgb-success), var(--bg-opacity));
-  color: rgba(var(--rgb-white), var(--text-opacity));
+  --start-color: rgba(var(--rgb-success-600), var(--bg-opacity));
+  --end-color: rgba(var(--rgb-success-400), var(--bg-opacity));
+  @apply text-white;
   animation: 250ms cubic-bezier(0.85, 0, 0.15, 1) 0s 1 normal forwards bg_change,
     125ms cubic-bezier(0.85, 0, 0.15, 1) 125ms 1 normal forwards bg_opacity,
     125ms cubic-bezier(0.85, 0, 0.15, 1) 125ms 1 normal forwards text_opacity;

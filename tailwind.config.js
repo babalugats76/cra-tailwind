@@ -2,6 +2,19 @@ module.exports = {
   purge: [],
   theme: {
     extend: {
+      backgroundColor: {
+        success: {
+          '100': '#0AFF6C',
+          '200': '#00F562',
+          '300': '#00E05A',
+          '400': '#00CC52',
+          '500': '#00B849',
+          '600': '#00A341',
+          '700': '#008F39',
+          '800': '#007A31',
+          '900': '#006629'
+        },
+      },
       borderOpacity: {
         10: '0.1',
       },
@@ -9,10 +22,6 @@ module.exports = {
         xl: '0.75rem',
       },
       colors: {
-        success: {
-          dark: 'var(--color-success-dark)',
-          default: 'var(--color-success)',
-        },
         primary: 'var(--color-primary)',
         secondary: 'var(--color-secondary)',
         neutral: {
