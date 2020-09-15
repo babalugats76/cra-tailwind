@@ -23,6 +23,12 @@ $white: #ffffff;
   --badge-size-default: var(--badge-size-md);
   --badge-size-xl: 1.75rem;
   --badge-size-2xl: 2rem;
+  --button-size-xs: 0.625rem;
+  --button-size-sm: 0.75rem;
+  --button-size-md: 0.875rem;
+  --button-size-base: 1rem;
+  --button-size-lg: 1.125rem;
+  --button-size-xl: 1.25rem;
   --chip-size-xs: 0.625rem;
   --chip-size-sm: 0.75rem;
   --chip-size-md: 0.875rem;
@@ -253,16 +259,82 @@ html {
 /*** Buttons ***/
 
 .btn {
-  @apply py-2 px-4 bg-gray-300 cursor-pointer outline-none;
+  --bg-opacity: 1;
+  --text-opacity: 1;
+  --button-border-radius: 3px;
+  font-size: var(--button-size-base);
+  @apply inline-block py-3 px-5 border-0 bg-gray-200 text-gray-700 leading-tight font-inter font-semibold no-underline text-center align-middle appearance-none select-none cursor-pointer outline-none;
+  border-radius: var(--button-border-radius);
 }
 
-.btn:hover {
+.btn:hover,
+.btn:focus {
+  @apply bg-gray-300 border-0 outline-none;
+}
+
+.btn:active {
   @apply bg-gray-400;
 }
 
-.btn:focus {
-  @apply outline-none;
+/*** Button Sizes ***/
+
+.btn--xs {
+  font-size: var(--button-size-xs);
 }
+
+.btn--sm {
+  font-size: var(--button-size-sm);
+}
+
+.btn--md {
+  font-size: var(--button-size-md);
+}
+
+.btn--lg {
+  font-size: var(--button-size-lg);
+}
+
+.btn--xl {
+  font-size: var(--button-size-xl);
+}
+
+.btn--full {
+  @apply w-full;
+}
+
+/*** Button Themes/States ***/
+.btn--success {
+  --bg-opacity: 1;
+  @apply bg-success-400 text-white;
+}
+
+.btn--success:hover,
+.btn--success:focus {
+  --bg-opacity: 1;
+  @apply bg-success-500;
+}
+
+.btn--success:active {
+  --bg-opacity: 1;
+  @apply bg-success-600;
+}
+
+/*** "Labeled" Buttons ***/
+.btn--lbl .icon {
+  vertical-align: -12.5%; /* Nudge */
+}
+
+.btn--lbl-left .icon {
+  margin-right: 0.5em;
+  margin-left: -0.1875em;
+}
+
+.btn--lbl-right .icon {
+  margin-left: 0.375em;
+  margin-right: -0.25em;
+}
+
+/*** Icon-only Buttons ***/
 
 .btn--icon {
   @apply text-gray-600;

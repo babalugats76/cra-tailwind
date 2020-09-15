@@ -37,6 +37,7 @@ module.exports = {
         hind: '"Hind", sans-serif',
         'lexend-deca': '"Lexend Deca", sans-serif',
         montserrat: 'Montserrat, sans-serif',
+        inter: '"Inter", sans-serif'
       },
       fontSize: {
         md: '0.9375rem',
@@ -52,6 +53,7 @@ module.exports = {
       spacing: {
         '0-em': '0',
         'xs-em': '0.125em',
+        'sm-em': '0.375em',
         '1-em': '0.25em',
         '2-em': '0.5em',
         '3-em': '0.75em',
@@ -64,9 +66,9 @@ module.exports = {
         '12-em': '3em',
         '16-em': '4em',
         '20-em': '5em',
-        xs: '0.125rem',
-        sm: '0.375rem',
-        7: '1.75rem',
+        'xs': '0.125rem',
+        'sm': '0.375rem',
+        '7': '1.75rem',
       },
       textColor: {
         inherit: 'inherit',
